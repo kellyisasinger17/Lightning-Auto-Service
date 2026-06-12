@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lightning Auto Service | ADAS Calibration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal: #66cdb8;
+      --teal-deep: #29ccb5;
+      --gold: #b98422;
+      --black: #000000;
+      --white: #ffffff;
+      --panel: rgba(246, 248, 252, 0.84);
+      --panel-strong: rgba(246, 248, 252, 0.92);
+      --shadow: 0 22px 46px rgba(0, 0, 0, 0.32);
+      --max: 1760px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--black);
+      font-family: Arial, Helvetica, sans-serif;
+      background: #1d2229;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: rgba(20, 24, 33, 0.48);
+      pointer-events: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+    }
+
+    .background-video {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.9);
+    }
+
+    .topbar {
+      height: 60px;
+      background: var(--teal);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+
+    .topbar-inner,
+    .nav-inner,
+    .hero-inner,
+    .partner-inner,
+    .services-inner {
+      width: min(var(--max), calc(100% - 64px));
+      margin: 0 auto;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: clamp(24px, 4vw, 64px);
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      white-space: nowrap;
+    }
+
+    .top-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--white);
+      flex: 0 0 auto;
+    }
+
+    .site-nav {
+      background: var(--black);
+      color: var(--gold);
+      position: sticky;
+      top: 60px;
+      z-index: 29;
+    }
+
+    .nav-inner {
+      min-height: 90px;
+      display: grid;
+      grid-template-columns: 170px 1fr 150px;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-logo img {
+      width: 96px;
+      height: auto;
+    }
+
+    .revv img {
+      width: 104px;
+      height: auto;
+    }
+
+    .nav-links {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(max-content, 1fr));
+      align-items: center;
+      justify-items: center;
+      gap: 18px;
+      font-family: "Oswald", Arial, Helvetica, sans-serif;
+      font-size: clamp(1rem, 1.25vw, 1.55rem);
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      transition: color 160ms ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .nav-links a:active {
+      color: #22D8B4;
+    }
+
+    .revv {
+      justify-self: end;
+      color: var(--white);
+      font-size: clamp(1.6rem, 2vw, 2.5rem);
+      font-weight: 900;
+      font-style: italic;
+      line-height: 1;
+    }
+
+    .hero {
+      min-height: calc(92vh - 150px);
+      padding: clamp(34px, 4vw, 64px) 0 clamp(34px, 4vw, 58px);
+      display: flex;
+      align-items: start;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.86fr 1.08fr;
+      gap: clamp(28px, 5vw, 96px);
+      align-items: start;
+      width: min(1450px, 100%);
+      margin: 0 auto;
+    }
+
+    .brand-column {
+      display: grid;
+      justify-items: center;
+      gap: clamp(24px, 3vw, 42px);
+      padding-top: clamp(4px, 1vw, 18px);
+    }
+
+    .logo-panel {
+      width: min(100%, 480px);
+      min-height: clamp(220px, 23vw, 320px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(24px, 3vw, 42px);
+      background: var(--panel-strong);
+      border-radius: 42px;
+      box-shadow: 0 28px 54px rgba(0, 0, 0, 0.18);
+    }
+
+    .logo-panel img {
+      width: min(100%, 405px);
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: min(100%, 330px);
+      min-height: 82px;
+      padding: 18px 32px;
+      border-radius: 28px;
+      border: 2px solid var(--gold);
+      background: var(--teal-deep);
+      color: var(--white);
+      font-size: clamp(1.15rem, 1.65vw, 1.65rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      box-shadow: var(--shadow);
+    }
+
+    .message-panel {
+      background: var(--panel);
+      border-radius: 42px;
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 3vw, 42px);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .headline {
+      margin: 0 auto clamp(22px, 3vw, 38px);
+      max-width: 760px;
+      font-size: clamp(1.35rem, 2.25vw, 2.45rem);
+      line-height: 1.35;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .headline em {
+      display: block;
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    .schedule-row {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      align-items: center;
+      gap: clamp(18px, 3.5vw, 52px);
+      margin-bottom: clamp(26px, 3.5vw, 50px);
+    }
+
+    .schedule-row img {
+      width: min(100%, 170px);
+      justify-self: end;
+    }
+
+    .scan-copy {
+      justify-self: start;
+      max-width: 320px;
+      font-size: clamp(1.2rem, 1.8vw, 2.1rem);
+      line-height: 1.35;
+      font-weight: 900;
+      text-align: left;
+    }
+
+    .support-copy {
+      margin: 0 auto;
+      max-width: 820px;
+      font-size: clamp(0.98rem, 1.25vw, 1.55rem);
+      line-height: 1.32;
+      font-style: italic;
+    }
+
+    .info-strip {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      gap: clamp(20px, 4vw, 56px);
+      margin: clamp(38px, 5.5vw, 74px) auto 0;
+      padding: clamp(22px, 2.4vw, 38px) clamp(28px, 4vw, 58px);
+      width: min(100%, 1340px);
+      background: rgba(246, 248, 252, 0.88);
+      border-radius: 42px;
+      box-shadow: var(--shadow);
+    }
+
+    .calendly-link {
+      grid-column: 1 / -1;
+      display: block;
+      width: min(100%, 520px);
+      margin: clamp(28px, 4vw, 52px) auto 0;
+    }
+
+    .calendly-link img {
+      width: 100%;
+      height: auto;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(18px, 2.5vw, 34px);
+      min-width: 0;
+      font-size: clamp(1.15rem, 2.25vw, 2.35rem);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .info-icon {
+      width: clamp(38px, 4vw, 62px);
+      height: clamp(38px, 4vw, 62px);
+      object-fit: cover;
+      flex: 0 0 auto;
+    }
+
+    .partner-section {
+      min-height: calc(100vh - 150px);
+      padding: clamp(54px, 6vw, 86px) 0 clamp(72px, 8vw, 120px);
+    }
+
+    .partner-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(46px, 8vw, 160px);
+      align-items: start;
+      width: min(1380px, 100%);
+      margin: 0 auto;
+    }
+
+    .work-panel,
+    .mobile-panel {
+      min-height: clamp(330px, 26vw, 440px);
+      background: var(--panel-strong);
+      border-radius: 42px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .work-panel {
+      padding: clamp(34px, 4vw, 58px) clamp(32px, 4vw, 56px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: clamp(24px, 3vw, 38px);
+    }
+
+    .panel-title {
+      margin: 0;
+      font-size: clamp(1.85rem, 2.8vw, 3rem);
+      line-height: 1.08;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .work-panel p {
+      margin: 0 auto;
+      max-width: 760px;
+      font-size: clamp(1rem, 1.35vw, 1.45rem);
+      line-height: 1.28;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+    }
+
+    .mobile-panel {
+      padding: clamp(34px, 4vw, 58px) clamp(32px, 4vw, 56px);
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      gap: clamp(26px, 4vw, 58px);
+    }
+
+    .mobile-panel .panel-title {
+      grid-column: 1 / -1;
+    }
+
+    .car-badge {
+      display: grid;
+      place-items: center;
+      justify-self: end;
+      width: clamp(150px, 15vw, 230px);
+      aspect-ratio: 1;
+      background: transparent;
+      overflow: visible;
+    }
+
+    .car-badge img {
+      width: 300%;
+      max-width: none;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .mobile-copy {
+      margin: 0;
+      max-width: 430px;
+      font-size: clamp(1rem, 1.35vw, 1.45rem);
+      line-height: 1.28;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+
+    .media-grid {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 0.9fr 1.35fr;
+      gap: clamp(48px, 10vw, 180px);
+      align-items: center;
+      margin-top: clamp(54px, 7vw, 86px);
+      padding: 0 clamp(36px, 5vw, 76px);
+    }
+
+    .podcast-card,
+    .video-card {
+      min-height: clamp(250px, 24vw, 360px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(28px, 4vw, 54px);
+      color: var(--black);
+      text-align: center;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .podcast-card {
+      justify-self: center;
+      width: min(100%, 420px);
+      background:
+        linear-gradient(rgba(160, 160, 160, 0.66), rgba(160, 160, 160, 0.66)),
+        url("images/Collision%20Cast.png") center / cover;
+    }
+
+    .video-card {
+      width: min(100%, 680px);
+      justify-self: center;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      background:
+        linear-gradient(rgba(210, 216, 226, 0.58), rgba(210, 216, 226, 0.58)),
+        url("images/Marketing1.png") center / cover;
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
+    }
+
+    .media-card-title {
+      margin: 0;
+      font-size: clamp(1.65rem, 2.8vw, 3.1rem);
+      line-height: 1.35;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .services-section {
+      min-height: calc(100vh - 150px);
+      padding: clamp(54px, 6vw, 86px) 0 clamp(78px, 8vw, 124px);
+    }
+
+    .services-panel {
+      width: min(1380px, 100%);
+      margin: 0 auto;
+      padding: clamp(28px, 3.2vw, 48px) clamp(34px, 5vw, 74px) clamp(34px, 4vw, 58px);
+      background: var(--panel-strong);
+      border-radius: 42px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .services-title {
+      margin: 0 0 clamp(22px, 3vw, 40px);
+      font-size: clamp(2rem, 3vw, 3.2rem);
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .service-columns {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(36px, 6vw, 96px);
+      align-items: start;
+    }
+
+    .service-item {
+      display: grid;
+      justify-items: center;
+      gap: clamp(18px, 2vw, 28px);
+    }
+
+    .line-icon {
+      width: clamp(72px, 6vw, 112px);
+      height: clamp(72px, 6vw, 112px);
+      object-fit: cover;
+    }
+
+    .service-item h3,
+    .ev-panel h2 {
+      margin: 0;
+      font-size: clamp(1.45rem, 2vw, 2.35rem);
+      line-height: 1.1;
+      font-style: italic;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .service-item p {
+      margin: 0;
+      max-width: 360px;
+      font-size: clamp(1.12rem, 1.55vw, 1.85rem);
+      line-height: 1.3;
+      letter-spacing: 0.05em;
+    }
+
+    .service-item strong {
+      font-weight: 900;
+    }
+
+    .services-lower {
+      width: min(1400px, 100%);
+      margin: clamp(44px, 5vw, 70px) auto 0;
+      display: grid;
+      grid-template-columns: 0.9fr 0.9fr;
+      justify-content: space-between;
+      gap: clamp(48px, 10vw, 180px);
+    }
+
+    .opus-panel,
+    .ev-panel {
+      background: var(--panel);
+      border-radius: 42px;
+      box-shadow: var(--shadow);
+    }
+
+    .opus-panel {
+      padding: clamp(34px, 4vw, 56px) clamp(34px, 5vw, 72px);
+    }
+
+    .opus-panel h2 {
+      margin: 0 0 clamp(28px, 4vw, 48px);
+      font-size: clamp(1.55rem, 2.35vw, 2.55rem);
+      line-height: 1.1;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .opus-panel p,
+    .opus-panel li {
+      font-size: clamp(1.05rem, 1.45vw, 1.55rem);
+      line-height: 1.35;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+    }
+
+    .opus-panel p {
+      margin: 0 0 28px;
+      text-align: center;
+    }
+
+    .opus-panel ul {
+      margin: 0;
+      padding-left: 26px;
+    }
+
+    .ev-panel {
+      display: grid;
+      justify-items: center;
+      align-content: center;
+      gap: clamp(22px, 2.8vw, 38px);
+      padding: clamp(34px, 4vw, 56px);
+      text-align: center;
+    }
+
+    .ev-panel .line-icon {
+      width: clamp(120px, 12vw, 220px);
+      height: clamp(68px, 7vw, 116px);
+      object-fit: cover;
+    }
+
+    .ev-panel h2 {
+      font-style: normal;
+      font-size: clamp(1.55rem, 2.35vw, 2.55rem);
+      text-align: center;
+    }
+
+    .ev-panel p {
+      margin: 0;
+      max-width: 640px;
+      font-size: clamp(1.2rem, 2vw, 2.45rem);
+      line-height: 1.34;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 1120px) {
+      .nav-inner {
+        grid-template-columns: 120px 1fr 100px;
+      }
+
+      .nav-links {
+        gap: 10px;
+        font-size: 0.92rem;
+      }
+
+      .hero-grid,
+      .partner-grid,
+      .services-lower {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .brand-column {
+        gap: 28px;
+      }
+
+      .logo-panel {
+        width: min(100%, 560px);
+      }
+
+      .message-panel {
+        width: min(100%, 800px);
+        margin: 0 auto;
+      }
+
+      .info-strip {
+        margin-top: 44px;
+      }
+
+      .mobile-panel {
+        width: min(100%, 800px);
+        margin: 0 auto;
+      }
+
+      .media-grid {
+        grid-template-columns: 1fr;
+        padding: 0;
+      }
+
+      .services-panel,
+      .opus-panel,
+      .ev-panel {
+        width: min(100%, 900px);
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .topbar {
+        height: auto;
+      }
+
+      .site-nav {
+        top: 48px;
+      }
+
+      .topbar-inner {
+        width: min(100%, calc(100% - 28px));
+        justify-content: center;
+        padding: 10px 0;
+        gap: 18px;
+        font-size: 20px;
+      }
+
+      .top-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      .nav-inner,
+      .hero-inner,
+      .partner-inner,
+      .services-inner {
+        width: min(100%, calc(100% - 28px));
+      }
+
+      .nav-inner {
+        min-height: auto;
+        grid-template-columns: 94px 1fr;
+        padding: 14px 0;
+      }
+
+      .nav-logo img {
+        width: 76px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .revv {
+        font-size: 1.35rem;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 34px 0 52px;
+      }
+
+      .logo-panel,
+      .message-panel,
+      .info-strip,
+      .work-panel,
+      .mobile-panel,
+      .services-panel,
+      .opus-panel,
+      .ev-panel {
+        border-radius: 28px;
+      }
+
+      .cta-button {
+        min-height: 78px;
+        border-radius: 22px;
+      }
+
+      .schedule-row {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+
+      .schedule-row img,
+      .scan-copy {
+        justify-self: center;
+        text-align: center;
+      }
+
+      .info-strip {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+      }
+
+      .info-item {
+        justify-content: flex-start;
+        font-size: clamp(1.45rem, 8vw, 2.45rem);
+        white-space: normal;
+      }
+
+      .partner-section {
+        padding: 42px 0 68px;
+      }
+
+      .services-section {
+        padding: 42px 0 68px;
+      }
+
+      .service-columns {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .mobile-panel {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+
+      .car-badge {
+        justify-self: center;
+      }
+
+      .mobile-copy {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .site-nav {
+        top: 86px;
+      }
+
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding-left: 10px;
+      }
+
+      .contact-link {
+        gap: 10px;
+      }
+
+      .logo-panel {
+        min-height: 230px;
+        padding: 24px;
+      }
+
+      .message-panel {
+        padding: 26px 20px;
+      }
+
+      .headline {
+        line-height: 1.22;
+      }
+
+      .info-strip,
+      .work-panel,
+      .mobile-panel,
+      .services-panel,
+      .opus-panel,
+      .ev-panel {
+        padding: 26px 20px;
+      }
+
+      .media-card-title {
+        font-size: clamp(1.45rem, 10vw, 2.45rem);
+      }
+    }
+  </style>
+</head>
+<body>
+  <video class="background-video" autoplay muted loop playsinline aria-hidden="true">
+    <source src="images/Homepage%20ADAS.mp4" type="video/mp4">
+  </video>
+
+  <div class="topbar" id="contact">
+    <div class="topbar-inner">
+      <a class="contact-link" href="tel:+18562027494" aria-label="Call Lightning Auto Service at 856 202 7494">
+        <svg class="top-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M6.6 10.8c1.7 3.4 3.2 4.9 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.6 22 2 13.4 2 2.9c0-.7.5-1.2 1.2-1.2h3.5c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.8.6 4 .1.4 0 .9-.3 1.2l-1.6 2.7z"/>
+        </svg>
+        <span>(856) 202-7494</span>
+      </a>
+      <a class="contact-link" href="mailto:info@lightningautoservice.com" aria-label="Email Lightning Auto Service">
+        <svg class="top-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="12" fill="currentColor"/>
+          <path fill="#66cdb8" d="M5.2 7.2h13.6v9.6H5.2V7.2zm1.1 1.1 5.7 4.6 5.7-4.6H6.3zm-.1 7.4h11.6v-6l-5.8 4.7-5.8-4.7v6z"/>
+        </svg>
+        <span>Email us</span>
+      </a>
+    </div>
+  </div>
+
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#top" aria-label="Lightning Auto Service home">
+        <img src="images/Lightning%20white%20logo.png" alt="Lightning Auto Service">
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#schedule">Schedule Calibration</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+        <a href="#virtual-service-center">Locations</a>
+        <a href="#more">More</a>
+      </nav>
+      <a class="revv" href="#more" aria-label="REVV partner">
+        <img src="images/Revv%20logo.png" alt="REVV">
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="schedule">
+      <div class="hero-inner">
+        <div class="hero-grid">
+          <div class="brand-column">
+            <div class="logo-panel">
+              <img src="images/lightning%20logo.png" alt="Lightning Auto Service">
+            </div>
+            <a class="cta-button" href="https://lightningserviceform.netlify.app/">Schedule Service</a>
+          </div>
+
+          <article class="message-panel" aria-label="ADAS calibration scheduling">
+            <h1 class="headline">
+              South Jersey's trusted partner for ADAS calibration,
+              <em>diagnostics &amp; post-collision services</em>
+            </h1>
+            <div class="schedule-row">
+              <img src="images/Lightning%20Schedule%20Service%20App.png" alt="Lightning Schedule Service App">
+              <div class="scan-copy">Scan to schedule an appointment for any vehicle.</div>
+            </div>
+            <p class="support-copy">Supporting Collision Repair shops throughout the South Jersey and Philadelphia region with OEM-compliant repairs.</p>
+          </article>
+
+          <div class="info-strip" aria-label="Service highlights">
+            <a class="info-item" href="tel:+18562027494">
+              <img class="info-icon" src="images/Phone.png" alt="">
+              <span>(856) 202-7494</span>
+            </a>
+            <div class="info-item">
+              <img class="info-icon" src="images/Shield.png" alt="">
+              <span>ADAS Calibrations</span>
+            </div>
+            <div class="info-item">
+              <img class="info-icon" src="images/Bolt.png" alt="">
+              <span>Same-Day Service</span>
+            </div>
+          </div>
+
+          <a class="calendly-link" href="https://calendly.com/scheduling-lightningautoservice/calibration-service" aria-label="Schedule calibration service on Calendly">
+            <img src="images/Calendly.png" alt="Schedule calibration service">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="partner-section" id="about">
+      <div class="partner-inner">
+        <div class="partner-grid">
+          <article class="work-panel">
+            <h2 class="panel-title">Let's Work Together</h2>
+            <p>At Lightning Auto Service, we believe it is critical for vehicle safety systems to operate properly.</p>
+            <p>Our team utilizes manufacturer-approved, top-of-the-line diagnostic and service equipment for most makes and models, ensuring every vehicle is serviced to the highest standards.</p>
+            <p>We provide mobile ADAS calibration, diagnostics, and programming services throughout South Jersey and the Philadelphia region.</p>
+          </article>
+
+          <article class="mobile-panel" id="virtual-service-center">
+            <h2 class="panel-title">We Will Come To You</h2>
+            <div class="car-badge" aria-hidden="true">
+              <img src="images/Car%20logo1.png" alt="">
+            </div>
+            <p class="mobile-copy">After replacing glass or any body repairs, one of our technicians will come to your location to get the vehicle back to safety standards.</p>
+          </article>
+
+          <div class="media-grid" id="more">
+            <a class="podcast-card" href="https://fenderbender.com/55270469" aria-label="Listen to our interview on Collision Cast">
+              <h3 class="media-card-title">Listen to our interview on Collision Cast!</h3>
+            </a>
+            <a class="video-card" href="https://www.lightningautoservice.com/revvhq" aria-label="Watch our interview with REVV">
+              <h3 class="media-card-title">Watch our interview with REVV!</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" id="services">
+      <div class="services-inner">
+        <article class="services-panel" aria-label="Our services">
+          <h2 class="services-title">Our Services</h2>
+          <div class="service-columns">
+            <div class="service-item">
+              <img class="line-icon" src="images/Car%20logo%202.png" alt="">
+              <h3>Vehicle Diagnostics</h3>
+              <p>Mobile <strong>OEM diagnostics</strong> ensuring accurate repairs and properly functioning safety systems.</p>
+            </div>
+
+            <div class="service-item">
+              <img class="line-icon" src="images/ADAS%20target.png" alt="">
+              <h3>ADAS Calibrations</h3>
+              <p>Specializing in precise <strong>mobile ADAS calibrations</strong> for safe, compliant vehicle repairs.</p>
+            </div>
+
+            <div class="service-item">
+              <img class="line-icon" src="images/Education.png" alt="">
+              <h3>Education</h3>
+              <p>We provide ADAS and diagnostic repair <strong>education</strong>, helping repair shops navigate OEM requirements with ease.</p>
+            </div>
+          </div>
+        </article>
+
+        <div class="services-lower">
+          <article class="opus-panel">
+            <h2>Powered by OPUS + REVV</h2>
+            <p>We provide:</p>
+            <ul>
+              <li>Instant VIN-based Calibration Reports</li>
+              <li>Insurance-ready Invoices</li>
+              <li>OEM-compliant documentation</li>
+              <li>More accuracy. More safety. More value.</li>
+            </ul>
+          </article>
+
+          <article class="ev-panel">
+            <img class="line-icon" src="images/EV.png" alt="">
+            <h2>The EV Experts</h2>
+            <p>With 10+ years of experience working with EVs, Lightning technicians are fully prepared to service your Teslas, Rivians, and more.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
