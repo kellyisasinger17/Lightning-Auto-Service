@@ -322,6 +322,16 @@
       margin: clamp(28px, 4vw, 52px) auto 0;
     }
 
+    .calendly-widget-wrap iframe {
+      display: block;
+      width: 100%;
+      min-width: 320px;
+      height: 700px;
+      border: 0;
+      border-radius: 12px;
+      background: var(--white);
+    }
+
     .info-item {
       display: flex;
       align-items: center;
@@ -1055,12 +1065,12 @@
             </div>
           </div>
 
-          <!-- Calendly inline widget begin -->
           <div class="calendly-widget-wrap">
-            <div class="calendly-inline-widget" data-url="https://calendly.com/scheduling-lightningautoservice/calibration-service?primary_color=22d8b4" style="min-width:320px;height:700px;"></div>
+            <iframe
+              src="https://calendly.com/scheduling-lightningautoservice/calibration-service?embed_domain=www.lightningautoservice.com&amp;embed_type=Inline&amp;primary_color=22d8b4"
+              title="Schedule calibration service on Calendly"
+              loading="lazy"></iframe>
           </div>
-          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-          <!-- Calendly inline widget end -->
         </div>
       </div>
     </section>
@@ -1182,7 +1192,7 @@
       </div>
     </div>
   </footer>
-  <script src="nav-resources.js?v=5"></script>
+  <script src="nav-resources.js?v=6"></script>
   <script>
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");

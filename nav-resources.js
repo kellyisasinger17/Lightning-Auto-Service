@@ -129,7 +129,7 @@
     pages: new Set(["resources.html", "whatadas.html", "whyadas.html", "compliance.html", "commonadas.html"]),
     links: [
       { href: "whatadas.html", label: "What is ADAS?" },
-      { href: "whyadas.html", label: "Why is ADAS Important?" },
+      { href: "whyadas.html", label: "Why is ADAS Critical?" },
       { href: "compliance.html", label: "Regulatory Compliance" },
       { href: "commonadas.html", label: "Common ADAS Calibrations" },
     ],
