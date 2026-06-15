@@ -208,7 +208,9 @@
       overflow: hidden;
       border-radius: 28px;
       background: #222;
+      color: var(--black);
       box-shadow: 0 14px 28px rgba(255, 255, 255, 0.06);
+      text-decoration: none;
     }
 
     .resource-tile img {
@@ -482,22 +484,22 @@
   <main class="resources-page">
     <div class="resources-inner">
       <section class="resources-grid" aria-label="Resources">
-        <article class="resource-tile">
+        <a class="resource-tile" href="whyadas.html" aria-label="ADAS Calibration: Why It's Critical">
           <img src="images/Marketing1.png" alt="">
           <h1>ADAS Calibration:<br>Why It's Critical</h1>
-        </article>
-        <article class="resource-tile">
+        </a>
+        <a class="resource-tile" href="compliance.html" aria-label="State and Federal Regulatory Compliance">
           <img src="images/Mobile%20calibrations.png" alt="">
           <h1>State &amp; Federal Regulatory Compliance</h1>
-        </article>
-        <article class="resource-tile">
+        </a>
+        <a class="resource-tile" href="whatadas.html" aria-label="What Is ADAS?">
           <img src="images/Marketing%205.png" alt="">
           <h1>What Is ADAS?</h1>
-        </article>
-        <article class="resource-tile">
+        </a>
+        <a class="resource-tile" href="commonadas.html" aria-label="Common ADAS Calibrations By OEM">
           <img src="images/ADAS%20TESLA.jpg" alt="">
           <h1>Common ADAS Calibrations By OEM</h1>
-        </article>
+        </a>
       </section>
     </div>
   </main>
@@ -523,9 +525,9 @@
       </div>
 
       <div class="footer-links" aria-label="Footer links">
-        <a href="http://www.lightningautoservice.com/legalstuff">Privacy Policy</a>
-        <a href="http://www.lightningautoservice.com/legalstuff">Terms &amp; Conditions</a>
-        <a href="http://www.lightningautoservice.com/legalstuff">Accessibility</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="accessibility.html">Accessibility</a>
         <span>&copy; 2026 Lightning Auto Service LLC</span>
       </div>
 
@@ -543,7 +545,7 @@
     </div>
   </footer>
 
-  <script src="nav-resources.js"></script>
+  <script src="nav-resources.js?v=5"></script>
   <script src="bottom-anchor.js"></script>
   <script>
     const menuToggle = document.querySelector(".menu-toggle");
