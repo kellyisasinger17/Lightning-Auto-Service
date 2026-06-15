@@ -495,7 +495,7 @@
   <header class="site-nav">
     <div class="nav-inner">
       <a class="nav-logo" href="index.html" aria-label="Lightning Auto Service home">
-        <img src="images/Lightning%20white%20logo.png" alt="Lightning Auto Service">
+        <img loading="lazy" src="images/Lightning%20white%20logo.png" alt="Lightning Auto Service">
       </a>
       <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
         <span></span>
@@ -505,7 +505,7 @@
       <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
         <a href="service.html">Schedule Calibration</a>
         <a href="about.html">About Us</a>
-        <div class="nav-dropdown">
+        <div class="nav-dropdown services-dropdown">
           <a href="services.html">Services</a>
           <div class="dropdown-menu">
             <a href="adas.html">ADAS Calibrations</a>
@@ -514,10 +514,18 @@
           </div>
         </div>
         <a href="partner.html">Become a Partner</a>
-        <a class="active" href="resources.html">Resources</a>
+        <div class="nav-dropdown resources-dropdown">
+          <a class="active" href="resources.html">Resources</a>
+          <div class="dropdown-menu">
+            <a href="whatadas.html">What is ADAS?</a>
+            <a href="whyadas.html">Why is ADAS Critical?</a>
+            <a class="active" href="compliance.html">Regulatory Compliance</a>
+            <a href="commonadas.html">Common ADAS Calibrations</a>
+          </div>
+        </div>
       </nav>
       <a class="revv" href="https://revvhq.com" aria-label="REVV partner">
-        <img src="images/Revv%20logo.png" alt="REVV">
+        <img loading="lazy" src="images/Revv%20logo.png" alt="REVV">
       </a>
     </div>
   </header>
@@ -541,7 +549,7 @@
         </article>
 
         <div class="media-side">
-          <img class="resource-image" src="images/Mobile%20calibrations.png" alt="Mobile ADAS calibration equipment near a vehicle">
+          <img loading="lazy" class="resource-image" src="images/Mobile%20calibrations.png" alt="Mobile ADAS calibration equipment near a vehicle">
           <article class="callout-panel">
             <p>Lightning Auto Service provides <strong><em>OEM-compliant ADAS calibrations</em></strong> using manufacturer-approved equipment, documented procedures, health scans, and photo verification to help ensure vehicles are safely restored to pre-loss condition while <strong>reducing risk</strong> for drivers, repairers, and insurers.</p>
           </article>
@@ -554,19 +562,19 @@
     <div class="footer-inner">
       <div class="footer-social" aria-label="Social links">
         <a href="https://www.instagram.com/lightningautonortheast" aria-label="Lightning Auto Service on Instagram">
-          <img src="images/Instagram.png" alt="">
+          <img loading="lazy" src="images/Instagram.png" alt="">
         </a>
         <a href="https://www.facebook.com/profile.php?id=61563176451572" aria-label="Lightning Auto Service on Facebook">
-          <img src="images/Facebook.png" alt="">
+          <img loading="lazy" src="images/Facebook.png" alt="">
         </a>
         <a href="http://x.com/lightningadas" aria-label="Lightning Auto Service on X">
-          <img src="images/Xlogo.png" alt="">
+          <img loading="lazy" src="images/Xlogo.png" alt="">
         </a>
         <a href="https://www.linkedin.com/company/lightning-adas" aria-label="Lightning Auto Service on LinkedIn">
-          <img src="images/Linkedin.png" alt="">
+          <img loading="lazy" src="images/Linkedin.png" alt="">
         </a>
         <a href="https://www.youtube.com/@LightningAutoService" aria-label="Lightning Auto Service on YouTube">
-          <img src="images/Youtube.png" alt="">
+          <img loading="lazy" src="images/Youtube.png" alt="">
         </a>
       </div>
 
@@ -579,19 +587,19 @@
 
       <div class="footer-logos" aria-label="Certification and partner links">
         <a href="https://nationalautobodycouncil.org/" aria-label="National Auto Body Council">
-          <img src="images/NABC%20logo.png" alt="National Auto Body Council">
+          <img loading="lazy" src="images/NABC%20logo.png" alt="National Auto Body Council">
         </a>
         <a href="https://www.i-car.com/" aria-label="I-CAR">
-          <img src="images/ICAR.png" alt="I-CAR">
+          <img loading="lazy" src="images/ICAR.png" alt="I-CAR">
         </a>
         <a href="https://ase.com/" aria-label="ASE">
-          <img src="images/ASE.png" alt="ASE">
+          <img loading="lazy" src="images/ASE.png" alt="ASE">
         </a>
       </div>
     </div>
   </footer>
 
-  <script src="nav-resources.js?v=6"></script>
+  <script src="nav-resources.js?v=7"></script>
   <script src="bottom-anchor.js"></script>
   <script>
     const menuToggle = document.querySelector(".menu-toggle");
