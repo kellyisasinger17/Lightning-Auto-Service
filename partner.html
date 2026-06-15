@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ADAS Calibrations | Lightning Auto Service</title>
+  <title>Become a Partner | Lightning Auto Service</title>
   <link rel="icon" type="image/png" href="images/Lightning%20white%20logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +50,7 @@
 
     .topbar-inner,
     .nav-inner,
-    .adas-inner,
+    .partner-inner,
     .footer-inner {
       width: min(var(--max), calc(100% - 64px));
       margin: 0 auto;
@@ -184,33 +184,130 @@
       background: currentColor;
     }
 
-    .adas-page {
+    .partner-page {
       min-height: calc(100vh - 168px);
       display: flex;
       align-items: center;
-      padding: clamp(50px, 6vw, 94px) 0 clamp(54px, 6vw, 86px);
+      padding: clamp(50px, 6vw, 92px) 0 clamp(54px, 6vw, 86px);
     }
 
-    .adas-layout {
+    .partner-layout {
       width: min(1370px, 100%);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(360px, 0.86fr) minmax(540px, 1.16fr);
+      grid-template-columns: minmax(300px, 0.58fr) minmax(560px, 1.22fr);
       align-items: center;
-      gap: clamp(44px, 6vw, 82px);
+      gap: clamp(52px, 7vw, 116px);
     }
 
-    .visual-side {
+    .left-side {
       display: grid;
       justify-items: center;
-      gap: clamp(52px, 7vw, 104px);
+      gap: clamp(54px, 7vw, 96px);
     }
 
-    .visual-side img {
-      width: min(100%, 520px);
-      aspect-ratio: 1.78 / 1;
-      object-fit: cover;
-      border-radius: 4px;
+    .form-shell,
+    .advantage-panel,
+    .contact-strip {
+      background: var(--panel);
+      border-radius: 34px;
+      box-shadow: 0 18px 40px rgba(255, 255, 255, 0.08);
+    }
+
+    .form-shell {
+      width: min(100%, 330px);
+      min-height: 350px;
+      padding: clamp(28px, 3vw, 40px);
+      display: grid;
+      align-content: start;
+      gap: 22px;
+    }
+
+    .form-shell h1,
+    .advantage-panel h2 {
+      margin: 0;
+      font-size: clamp(1.45rem, 2vw, 2.1rem);
+      line-height: 1.1;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .partner-form {
+      display: grid;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      align-items: center;
+      gap: 12px;
+    }
+
+    .form-row.message-row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .partner-form label {
+      font-size: clamp(0.9rem, 1.05vw, 1rem);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .partner-form input,
+    .partner-form textarea {
+      width: 100%;
+      border: 0;
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--black);
+      font: inherit;
+      font-size: 0.92rem;
+      box-shadow: 0 14px 24px rgba(0, 0, 0, 0.16);
+    }
+
+    .partner-form input {
+      height: 28px;
+      padding: 4px 14px;
+    }
+
+    .partner-form textarea {
+      min-height: 78px;
+      resize: vertical;
+      border-radius: 16px;
+      padding: 10px 14px;
+    }
+
+    .partner-form input:focus,
+    .partner-form textarea:focus {
+      outline: 3px solid rgba(34, 216, 180, 0.55);
+      outline-offset: 2px;
+    }
+
+    .submit-button {
+      justify-self: center;
+      min-width: 180px;
+      min-height: 48px;
+      margin-top: 8px;
+      padding: 12px 28px;
+      border: 2px solid var(--gold);
+      border-radius: 999px;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      filter: brightness(1.03);
     }
 
     .cta-button {
@@ -231,42 +328,43 @@
       box-shadow: 0 16px 32px rgba(255, 255, 255, 0.05);
     }
 
-    .content-side {
+    .right-side {
       display: grid;
       gap: clamp(26px, 3vw, 38px);
     }
 
-    .adas-panel,
-    .contact-strip {
-      background: var(--panel);
-      border-radius: 34px;
-      box-shadow: 0 18px 40px rgba(255, 255, 255, 0.08);
+    .advantage-panel {
+      min-height: 350px;
+      padding: clamp(34px, 4vw, 52px);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(170px, 0.42fr);
+      align-items: center;
+      column-gap: clamp(24px, 4vw, 58px);
     }
 
-    .adas-panel {
-      padding: clamp(30px, 4vw, 48px);
-      text-align: center;
+    .advantage-copy {
+      display: grid;
+      gap: clamp(24px, 3vw, 38px);
     }
 
-    .adas-panel h1 {
-      margin: 0 0 clamp(24px, 3vw, 36px);
-      font-size: clamp(1.5rem, 2vw, 2.25rem);
-      line-height: 1.2;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .advantage-panel h2 {
+      font-size: clamp(1.6rem, 2.15vw, 2.45rem);
     }
 
-    .adas-panel p {
-      margin: 0 auto 24px;
-      max-width: 770px;
-      font-size: clamp(0.95rem, 1.08vw, 1.14rem);
-      line-height: 1.38;
+    .advantage-panel ul {
+      margin: 0;
+      padding-left: 22px;
+      font-size: clamp(0.98rem, 1.15vw, 1.18rem);
+      line-height: 1.42;
       letter-spacing: 0.04em;
     }
 
-    .adas-panel p:last-child {
-      margin-bottom: 0;
+    .advantage-callout {
+      margin: 0;
+      font-size: clamp(1.55rem, 2vw, 2.25rem);
+      line-height: 1.32;
+      font-weight: 900;
+      text-align: center;
     }
 
     .contact-strip {
@@ -361,16 +459,16 @@
     }
 
     @media (max-width: 1120px) {
-      .adas-page {
+      .partner-page {
         align-items: flex-start;
       }
 
-      .adas-layout {
+      .partner-layout {
         grid-template-columns: 1fr;
         width: min(820px, 100%);
       }
 
-      .visual-side {
+      .left-side {
         gap: 34px;
       }
 
@@ -393,7 +491,7 @@
 
       .topbar-inner,
       .nav-inner,
-      .adas-inner,
+      .partner-inner,
       .footer-inner {
         width: min(100%, calc(100% - 28px));
       }
@@ -454,14 +552,26 @@
         display: none;
       }
 
-      .adas-page {
+      .partner-page {
         min-height: auto;
         padding: 34px 0 54px;
       }
 
-      .adas-panel,
+      .form-shell,
+      .advantage-panel,
       .contact-strip {
         border-radius: 28px;
+      }
+
+      .form-shell {
+        width: min(100%, 420px);
+        min-height: 0;
+      }
+
+      .advantage-panel {
+        min-height: 0;
+        grid-template-columns: 1fr;
+        gap: 28px;
       }
 
       .contact-strip {
@@ -491,13 +601,27 @@
         gap: 10px;
       }
 
-      .adas-panel {
+      .form-shell,
+      .advantage-panel {
         padding: 28px 20px;
       }
 
-      .adas-panel p {
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+
+      .partner-form input {
+        height: 38px;
+      }
+
+      .advantage-panel ul {
         font-size: 0.94rem;
-        line-height: 1.44;
+        line-height: 1.5;
+      }
+
+      .advantage-callout {
+        font-size: 1.45rem;
       }
 
       .contact-item {
@@ -520,7 +644,7 @@
       <a class="contact-link" href="mailto:submissions@lightningautoservice.com" aria-label="Email Lightning Auto Service">
         <svg class="top-icon" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="12" r="12" fill="currentColor"/>
-          <path fill="#66cdb8" d="M5.2 7.2h13.6v9.6H5.2V7.2zm1.1 1.1 5.7 4.6 5.7-4.6H6.3zm-.1 7.4h11.6v-6l-5.8 4.7-5.8-4.7v6z"/>
+          <path fill="#22D8B4" d="M5.2 7.2h13.6v9.6H5.2V7.2zm1.1 1.1 5.7 4.6 5.7-4.6H6.3zm-.1 7.4h11.6v-6l-5.8 4.7-5.8-4.7v6z"/>
         </svg>
         <span>Email us</span>
       </a>
@@ -541,14 +665,14 @@
         <a href="service.html">Schedule Calibration</a>
         <a href="about.html">About Us</a>
         <div class="nav-dropdown">
-          <a class="active" href="services.html">Services</a>
+          <a href="services.html">Services</a>
           <div class="dropdown-menu">
-            <a class="active" href="adas.html">ADAS Calibrations</a>
+            <a href="adas.html">ADAS Calibrations</a>
             <a href="diagnostics.html">Diagnostics</a>
             <a href="wiring.html">Wiring Harness Repair</a>
           </div>
         </div>
-        <a href="partner.html">Become a Partner</a>
+        <a class="active" href="partner.html">Become a Partner</a>
         <a href="index.html#more">Resources</a>
       </nav>
       <a class="revv" href="https://revvhq.com" aria-label="REVV partner">
@@ -557,20 +681,65 @@
     </div>
   </header>
 
-  <main class="adas-page">
-    <div class="adas-inner">
-      <div class="adas-layout">
-        <div class="visual-side">
-          <img src="images/ADAS%20TESLA.jpg" alt="Tesla vehicle undergoing ADAS calibration">
+  <main class="partner-page">
+    <div class="partner-inner">
+      <div class="partner-layout">
+        <div class="left-side">
+          <section class="form-shell" aria-labelledby="partner-form-heading">
+            <h1 id="partner-form-heading">Partner Form</h1>
+            <form class="partner-form" action="https://formspree.io/f/xjgdlwdv" method="POST">
+              <input type="hidden" name="_subject" value="New Lightning Auto Service Partner Inquiry">
+
+              <div class="form-row">
+                <label for="partner-name">Name</label>
+                <input id="partner-name" type="text" name="name" autocomplete="name" required>
+              </div>
+
+              <div class="form-row">
+                <label for="partner-phone">Phone</label>
+                <input id="partner-phone" type="tel" name="phone" autocomplete="tel" required>
+              </div>
+
+              <div class="form-row">
+                <label for="partner-email">Email</label>
+                <input id="partner-email" type="email" name="email" autocomplete="email" required>
+              </div>
+
+              <div class="form-row">
+                <label for="partner-company">Company</label>
+                <input id="partner-company" type="text" name="company" autocomplete="organization">
+              </div>
+
+              <div class="form-row message-row">
+                <label for="partner-message">Message</label>
+                <textarea id="partner-message" name="message" rows="4"></textarea>
+              </div>
+
+              <button class="submit-button" type="submit">Submit</button>
+            </form>
+          </section>
+
           <a class="cta-button" href="https://lightningserviceform.netlify.app/">Schedule Service</a>
         </div>
 
-        <div class="content-side">
-          <article class="adas-panel">
-            <h1>Advanced Driver Assistance System (ADAS) Calibrations</h1>
-            <p>Modern vehicles rely on Advanced Driver Assistance Systems (ADAS) such as automatic emergency braking, lane-keeping assist, adaptive cruise control, cameras, and radar sensors to help protect drivers and passengers. Because these systems are integrated throughout the vehicle, many common repairs-including bumper, windshield, and body panel replacements-can affect their accuracy, <strong><em>even when no warning lights or fault codes are present</em></strong>.</p>
-            <p>To ensure these critical safety systems perform as intended, <strong><em>ADAS calibrations should be completed by qualified technicians</em></strong> using manufacturer-approved equipment and procedures. Lightning Auto Service provides documented calibrations, health scans, and system verification to help restore vehicles to OEM standards, reduce liability, and give repair facilities and vehicle owners confidence that the vehicle is safe to return to the road.</p>
-          </article>
+        <div class="right-side">
+          <section class="advantage-panel" aria-labelledby="advantage-heading">
+            <div class="advantage-copy">
+              <h2 id="advantage-heading">Become a Partner</h2>
+              <ul>
+                <li>The Lightning Advantage</li>
+                <li>Opus | IVS Preferred ADAS Vendor</li>
+                <li>Same-Day OEM-Approved Calibrations</li>
+                <li>OEM-Compliant Programming</li>
+                <li>Electrical Diagnostics &amp; Wiring Repairs</li>
+                <li>Mobile Services Direct to Your Facility</li>
+                <li>Keep Bays Open &amp; Cycle Times Low</li>
+                <li>We Handle Billing &amp; Documentation</li>
+                <li>Profit That Adds to Your Bottom Line</li>
+              </ul>
+            </div>
+            <p class="advantage-callout">Complete our form today!</p>
+          </section>
 
           <div class="contact-strip" aria-label="Service highlights">
             <a class="contact-item" href="tel:+18562027494">
