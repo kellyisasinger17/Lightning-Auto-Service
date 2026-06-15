@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Service Request | Lightning Auto Service</title>
+    <style>
+      :root {
+        --teal: #16A194;
+        --teal-dark: #0d7068;
+        --yellow: #FBDE6F;
+        --black: #050505;
+        --white: #ffffff;
+        --soft: #f6fcfb;
+        --line: #d8ece9;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      body {
+        background: var(--soft);
+        color: var(--black);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      .page {
+        margin: 0 auto;
+        max-width: 860px;
+        padding: 28px 18px 44px;
+      }
+
+      .header {
+        background: var(--white);
+        border-bottom: 6px solid var(--yellow);
+        padding: 26px 24px 20px;
+        text-align: center;
+      }
+
+      .logo {
+        height: auto;
+        margin: 0 auto;
+        max-width: 330px;
+        width: 100%;
+      }
+
+      .form-card {
+        background: var(--white);
+        border-top: 8px solid var(--teal);
+        box-shadow: 0 18px 45px rgba(5, 5, 5, 0.1);
+        padding: 34px;
+      }
+
+      h1 {
+        font-size: 34px;
+        font-weight: 700;
+        letter-spacing: 0;
+        line-height: 1.15;
+        margin: 0 0 10px;
+      }
+
+      .intro {
+        color: #303030;
+        font-size: 16px;
+        margin: 0 0 28px;
+        max-width: 620px;
+      }
+
+      .field {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.3px;
+        margin-bottom: 7px;
+        text-transform: uppercase;
+      }
+
+      input,
+      select,
+      textarea {
+        background: #ffffff;
+        border: 2px solid var(--line);
+        border-radius: 0;
+        color: var(--black);
+        display: block;
+        font: inherit;
+        min-height: 48px;
+        padding: 11px 12px;
+        width: 100%;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--teal);
+        outline: 3px solid rgba(22, 161, 148, 0.18);
+      }
+
+      textarea {
+        min-height: 112px;
+        resize: vertical;
+      }
+
+      .hint {
+        color: #555555;
+        font-size: 13px;
+        margin: 6px 0 0;
+      }
+
+      .grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .button-row {
+        align-items: center;
+        border-top: 1px solid var(--line);
+        display: flex;
+        gap: 16px;
+        justify-content: space-between;
+        margin-top: 28px;
+        padding-top: 24px;
+      }
+
+      button {
+        background: var(--teal);
+        border: 0;
+        color: var(--white);
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        min-height: 48px;
+        padding: 14px 24px;
+        text-transform: uppercase;
+      }
+
+      button:hover,
+      button:focus {
+        background: var(--teal-dark);
+      }
+
+      .required-note {
+        color: #555555;
+        font-size: 13px;
+        margin: 0;
+      }
+
+      @media (max-width: 680px) {
+        .form-card {
+          padding: 26px 20px;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .button-row {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="header">
+        <img class="logo" src="images/lightning%20logo.png" alt="Lightning Auto Service">
+      </header>
+
+      <section class="form-card">
+        <h1>Service Request</h1>
+        <p class="intro">Send your vehicle details and preferred service timing. The Lightning Auto Service team will review your request and follow up with next steps.</p>
+
+        <form action="https://formspree.io/f/xojzrdyy" method="POST" enctype="multipart/form-data">
+          <input type="text" name="_gotcha" autocomplete="off" tabindex="-1" hidden>
+          <div class="grid">
+            <div class="field">
+              <label for="name">Name *</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone Number *</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+
+          <div class="field">
+            <label for="shop-name">Shop Name *</label>
+            <input id="shop-name" name="shop_name" type="text" autocomplete="organization" required>
+          </div>
+
+          <div class="field">
+            <label for="vin">VIN</label>
+            <input id="vin" name="vin" type="text" autocomplete="off" maxlength="17">
+            <p class="hint">Enter the full VIN.</p>
+          </div>
+
+          <div class="field">
+            <label for="service-option">When do you need service? *</label>
+            <select id="service-option" name="service_option" required>
+              <option value="">Select an option</option>
+              <option value="Urgent">Urgent (ASAP)</option>
+              <option value="Standard">Standard (within 24-48 hours)</option>
+              <option value="Flexible">Flexible (within 3-4 business days)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="pdf-upload">PDF Upload</label>
+            <input id="pdf-upload" name="attachment" type="file" accept="application/pdf,.pdf">
+            <p class="hint">Upload a PDF of your estimate.</p>
+          </div>
+
+          <input type="hidden" name="_subject" value="New Lightning Auto Service Request">
+
+          <div class="button-row">
+            <p class="required-note">* Required fields</p>
+            <button type="submit">Submit Request</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
