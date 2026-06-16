@@ -139,6 +139,17 @@
   }
 
   buildDropdown({
+    href: "about.html",
+    label: "About Us",
+    className: "about-dropdown",
+    pages: new Set(["about.html", "john.html", "chris.html", "aaron.html", "locations.html"]),
+    links: [
+      { href: "about.html", label: "About Us" },
+      { href: "locations.html", label: "Locations" },
+    ],
+  });
+
+  buildDropdown({
     href: "services.html",
     label: "Services",
     className: "services-dropdown",

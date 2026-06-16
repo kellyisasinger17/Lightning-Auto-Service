@@ -580,7 +580,13 @@
       </button>
       <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
         <a href="service.html">Schedule Calibration</a>
-        <a href="about.html">About Us</a>
+        <div class="nav-dropdown about-dropdown">
+          <a href="about.html">About Us</a>
+          <div class="dropdown-menu">
+            <a href="about.html">About Us</a>
+            <a href="locations.html">Locations</a>
+          </div>
+        </div>
         <div class="nav-dropdown services-dropdown">
           <a href="services.html">Services</a>
           <div class="dropdown-menu">
@@ -717,7 +723,7 @@
     </div>
   </footer>
 
-  <script src="nav-resources.js?v=8"></script>
+  <script src="nav-resources.js?v=9"></script>
   <script src="bottom-anchor.js?v=2"></script>
   <script>
     const menuToggle = document.querySelector(".menu-toggle");
