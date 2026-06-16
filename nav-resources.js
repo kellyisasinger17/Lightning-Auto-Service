@@ -154,10 +154,10 @@
     href: "resources.html",
     label: "Resources",
     className: "resources-dropdown",
-    pages: new Set(["resources.html", "whatadas.html", "whyadas.html", "compliance.html", "commonadas.html"]),
+    pages: new Set(["resources.html", "whatisadas.html", "whatisadas.html#why-adas-critical", "compliance.html", "commonadas.html"]),
     links: [
-      { href: "whatadas.html", label: "What is ADAS?" },
-      { href: "whyadas.html", label: "Why is ADAS Critical?" },
+      { href: "whatisadas.html", label: "What is ADAS?" },
+      { href: "whatisadas.html#why-adas-critical", label: "Why is ADAS Critical?" },
       { href: "compliance.html", label: "Regulatory Compliance" },
       { href: "commonadas.html", label: "Common ADAS Calibrations" },
     ],
