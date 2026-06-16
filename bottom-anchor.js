@@ -141,14 +141,14 @@
     <div class="bottom-anchor__inner">
       <div class="bottom-anchor__help">
         <h2>Need help with your car?</h2>
-        <a class="bottom-anchor__button" href="service.html">Schedule Service</a>
+        <a class="bottom-anchor__button" href="schedule.html">Schedule Service</a>
       </div>
 
       <div class="bottom-anchor__links">
         <h2>Quick Links</h2>
         <nav aria-label="Quick links">
           <a href="index.html">Home</a>
-          <a href="service.html">Schedule Calibration</a>
+          <a href="schedule.html">Schedule Calibration</a>
           <a href="about.html">About Us</a>
           <a href="services.html">Our Services</a>
           <a href="partner.html">Become a Partner</a>
