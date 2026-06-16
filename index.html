@@ -333,6 +333,14 @@
       white-space: nowrap;
     }
 
+    .info-item:first-child {
+      justify-content: flex-start;
+    }
+
+    .info-item:last-child {
+      justify-content: flex-end;
+    }
+
     .info-icon {
       width: clamp(38px, 4vw, 62px);
       height: clamp(38px, 4vw, 62px);
@@ -869,6 +877,10 @@
         justify-content: flex-start;
         font-size: clamp(1.45rem, 8vw, 2.45rem);
         white-space: normal;
+      }
+
+      .info-item:last-child {
+        justify-content: flex-start;
       }
 
       .partner-section {
