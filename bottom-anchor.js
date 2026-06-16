@@ -153,6 +153,7 @@
           <a href="services.html">Our Services</a>
           <a href="partner.html">Become a Partner</a>
           <a href="resources.html">Resources</a>
+          <a href="careers.html">Careers</a>
           <a href="mailto:submissions@lightningautoservice.com">Contact</a>
         </nav>
       </div>
