@@ -380,6 +380,14 @@
       text-transform: uppercase;
     }
 
+    .panel-title-link {
+      transition: color 160ms ease;
+    }
+
+    .panel-title-link:hover {
+      color: #66cdb8;
+    }
+
     .work-panel p {
       margin: 0 auto;
       max-width: 760px;
@@ -1019,8 +1027,8 @@
         <div class="nav-dropdown resources-dropdown">
           <a href="resources.html">Resources</a>
           <div class="dropdown-menu">
-            <a href="whatadas.html">What is ADAS?</a>
-            <a href="whyadas.html">Why is ADAS Critical?</a>
+            <a href="whatisadas.html">What is ADAS?</a>
+            <a href="whatisadas.html#why-adas-critical">Why is ADAS Critical?</a>
             <a href="compliance.html">Regulatory Compliance</a>
             <a href="commonadas.html">Common ADAS Calibrations</a>
           </div>
@@ -1082,7 +1090,7 @@
       <div class="partner-inner">
         <div class="partner-grid">
           <article class="work-panel">
-            <h2 class="panel-title">Let's Work Together</h2>
+            <h2 class="panel-title"><a class="panel-title-link" href="partner.html">Let's Work Together</a></h2>
             <p>At Lightning Auto Service, we believe it is critical for vehicle safety systems to operate properly.</p>
             <p>Our team utilizes manufacturer-approved, top-of-the-line diagnostic and service equipment for most makes and models, ensuring every vehicle is serviced to the highest standards.</p>
             <p>We provide mobile ADAS calibration, diagnostics, and programming services throughout South Jersey and the Philadelphia region.</p>
@@ -1195,7 +1203,7 @@
       </div>
     </div>
   </footer>
-  <script src="nav-resources.js?v=7"></script>
+  <script src="nav-resources.js?v=8"></script>
   <script>
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
