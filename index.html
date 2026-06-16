@@ -114,7 +114,7 @@
       background: var(--black);
       color: var(--gold);
       position: sticky;
-      top: 60px;
+      top: 0;
       z-index: 29;
     }
 
@@ -621,6 +621,14 @@
       text-align: center;
     }
 
+    .ev-title-link {
+      transition: color 160ms ease;
+    }
+
+    .ev-title-link:hover {
+      color: #66cdb8;
+    }
+
     .ev-panel p {
       margin: 0;
       max-width: 640px;
@@ -775,7 +783,7 @@
       }
 
       .site-nav {
-        top: 48px;
+        top: 0;
       }
 
       .topbar-inner {
@@ -925,7 +933,7 @@
 
     @media (max-width: 520px) {
       .site-nav {
-        top: 86px;
+        top: 0;
       }
 
       .topbar-inner {
@@ -1155,7 +1163,7 @@
 
           <article class="ev-panel">
             <img loading="lazy" class="line-icon" src="images/EV.png" alt="">
-            <h2>The EV Experts</h2>
+            <h2><a class="ev-title-link" href="whatisadas.html#ev-diagnostics-calibrations">The EV Experts</a></h2>
             <p>With 10+ years of experience working with EVs, Lightning technicians are fully prepared to service your Teslas, Rivians, and more.</p>
           </article>
         </div>
