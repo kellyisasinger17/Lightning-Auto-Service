@@ -304,9 +304,9 @@
     .info-strip {
       grid-column: 1 / -1;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: minmax(max-content, 0.92fr) minmax(max-content, 1.12fr) minmax(max-content, 1.08fr);
       align-items: center;
-      gap: clamp(20px, 4vw, 56px);
+      gap: clamp(28px, 5vw, 86px);
       margin: clamp(38px, 5.5vw, 74px) auto 0;
       padding: clamp(22px, 2.4vw, 38px) clamp(28px, 4vw, 58px);
       width: min(100%, 1340px);
@@ -326,24 +326,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: clamp(8px, 1vw, 16px);
+      gap: clamp(10px, 1.2vw, 22px);
       min-width: 0;
       font-size: clamp(1.15rem, 2.25vw, 2.35rem);
       font-weight: 900;
       white-space: nowrap;
     }
 
-    .info-item:first-child {
-      justify-content: flex-start;
-    }
-
-    .info-item:last-child {
-      justify-content: flex-end;
-    }
-
     .info-icon {
-      width: clamp(38px, 4vw, 62px);
-      height: clamp(38px, 4vw, 62px);
+      width: clamp(28px, 2.8vw, 46px);
+      height: clamp(28px, 2.8vw, 46px);
       object-fit: cover;
       flex: 0 0 auto;
     }
@@ -875,12 +867,13 @@
 
       .info-item {
         justify-content: flex-start;
-        font-size: clamp(1.45rem, 8vw, 2.45rem);
+        font-size: clamp(1.1rem, 6vw, 1.7rem);
         white-space: normal;
       }
 
-      .info-item:last-child {
-        justify-content: flex-start;
+      .info-icon {
+        width: clamp(28px, 8vw, 42px);
+        height: clamp(28px, 8vw, 42px);
       }
 
       .partner-section {
