@@ -200,6 +200,38 @@
       gap: clamp(68px, 9vw, 132px);
     }
 
+    .whatadas-inner {
+      display: grid;
+      gap: clamp(70px, 8vw, 118px);
+    }
+
+    .critical-layout {
+      width: min(1360px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(350px, 0.86fr) minmax(520px, 1.08fr);
+      align-items: center;
+      gap: clamp(74px, 10vw, 146px);
+    }
+
+    .info-panel-grid {
+      width: min(1360px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: stretch;
+      gap: clamp(34px, 5vw, 72px);
+    }
+
+    .ev-diagnostics-layout {
+      width: min(1360px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(360px, 0.9fr) minmax(520px, 1.1fr);
+      align-items: center;
+      gap: clamp(48px, 7vw, 104px);
+    }
+
     .content-panel,
     .callout-panel {
       background: var(--panel);
@@ -240,16 +272,48 @@
       justify-items: center;
     }
 
+    .critical-media-side {
+      gap: clamp(36px, 4.5vw, 54px);
+    }
+
     .resource-image {
       width: min(100%, 520px);
       aspect-ratio: 2.16 / 1;
       object-fit: cover;
     }
 
+    .critical-image {
+      aspect-ratio: 1.66 / 1;
+    }
+
+    .ev-image {
+      width: min(100%, 560px);
+      height: auto;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+
     .callout-panel {
       width: min(100%, 520px);
       padding: clamp(30px, 4vw, 44px);
       text-align: center;
+    }
+
+    .critical-callout {
+      width: min(100%, 440px);
+    }
+
+    .risk-list {
+      margin: 0 auto 26px;
+      padding: 0;
+      list-style: none;
+      font-size: clamp(0.95rem, 1.08vw, 1.12rem);
+      line-height: 1.45;
+      letter-spacing: 0.04em;
+    }
+
+    .risk-list li::before {
+      content: "· ";
     }
 
     .site-footer {
@@ -323,6 +387,21 @@
       }
 
       .whatadas-layout {
+        grid-template-columns: 1fr;
+        width: min(820px, 100%);
+      }
+
+      .critical-layout {
+        grid-template-columns: 1fr;
+        width: min(820px, 100%);
+      }
+
+      .info-panel-grid {
+        grid-template-columns: 1fr;
+        width: min(820px, 100%);
+      }
+
+      .ev-diagnostics-layout {
         grid-template-columns: 1fr;
         width: min(820px, 100%);
       }
@@ -450,7 +529,8 @@
       }
 
       .content-panel p,
-      .callout-panel p {
+      .callout-panel p,
+      .risk-list {
         font-size: 0.94rem;
         line-height: 1.44;
       }
@@ -501,8 +581,8 @@
         <div class="nav-dropdown resources-dropdown">
           <a class="active" href="resources.html">Resources</a>
           <div class="dropdown-menu">
-            <a class="active" href="whatadas.html">What is ADAS?</a>
-            <a href="whyadas.html">Why is ADAS Critical?</a>
+            <a class="active" href="whatisadas.html">What is ADAS?</a>
+            <a href="whatisadas.html#why-adas-critical">Why is ADAS Critical?</a>
             <a href="compliance.html">Regulatory Compliance</a>
             <a href="commonadas.html">Common ADAS Calibrations</a>
           </div>
@@ -529,6 +609,47 @@
             <p>Lightning Auto Service is proud to stand as an <strong><em>industry leader</em></strong> in ADAS calibration and EV service, delivering safe, accurate, and legally compliant repairs for modern vehicles.</p>
           </article>
         </div>
+      </div>
+
+      <div class="critical-layout" id="why-adas-critical">
+        <div class="media-side critical-media-side">
+          <img loading="lazy" class="resource-image critical-image" src="images/Marketing1.png" alt="ADAS calibration equipment in a service bay">
+          <article class="callout-panel critical-callout">
+            <p>Lightning Auto Service takes OEM-required calibration procedures seriously to help <strong><em>ensure vehicle safety</em></strong>, manufacturer compliance, and proper system performance.</p>
+          </article>
+        </div>
+
+        <article class="content-panel">
+          <h1>ADAS Calibration:<br><em>Why It's Critical</em></h1>
+          <p><strong>Even minor deviations</strong> in ADAS component positioning or sensor alignment can result in:</p>
+          <ul class="risk-list">
+            <li>False system activations or failures</li>
+            <li>Delayed emergency responses</li>
+            <li>Inaccurate lane, object, and pedestrian detection</li>
+            <li>Increased liability and road safety risks</li>
+          </ul>
+          <p>OEM position statements and procedures mandate that these calibrations be performed using manufacturer-approved tools, targets, and software, under controlled conditions. Failing to follow these protocols risks <strong><em>vehicle safety, violates manufacturer warranty conditions, and can lead to insurance claim denials and legal liability.</em></strong></p>
+        </article>
+      </div>
+
+      <div class="info-panel-grid">
+        <article class="content-panel">
+          <h1>Static vs. Dynamic ADAS Calibrations</h1>
+          <p>ADAS calibrations generally fall into two categories: static and dynamic. A static calibration is performed in a controlled environment using manufacturer-approved targets, measurements, and equipment while the vehicle remains stationary. A dynamic calibration is completed by driving the vehicle under specific conditions so its cameras, radar sensors, and safety systems can learn and verify their surroundings. Many vehicles require one or both procedures following repairs involving windshields, bumpers, suspension components, alignments, or collision damage. For consumers, proper calibration helps ensure safety features such as automatic emergency braking, lane-keeping assist, and adaptive cruise control function as intended. For body shops, documenting required calibrations helps reduce liability, support OEM-compliant repairs, and provide confidence that the vehicle has been restored to pre-loss condition.</p>
+        </article>
+
+        <article class="content-panel">
+          <h1>ADAS Is Becoming Standard Equipment</h1>
+          <p>Advanced Driver Assistance Systems are rapidly becoming a standard part of modern vehicle design rather than a luxury feature. In 2024, the National Highway Traffic Safety Administration (NHTSA) finalized FMVSS 127, a landmark rule requiring Automatic Emergency Braking (AEB), one of the most common ADAS technologies, to be standard on all new passenger vehicles and light trucks sold in the United States by September 2029. NHTSA estimates this requirement alone will save hundreds of lives and prevent tens of thousands of injuries annually. As automakers continue expanding the use of cameras, radar sensors, pedestrian detection, lane-centering, and collision-avoidance technologies, repair facilities and vehicle owners can expect ADAS calibrations to become an increasingly routine and essential part of the repair process.</p>
+        </article>
+      </div>
+
+      <div class="ev-diagnostics-layout" id="ev-diagnostics-calibrations">
+        <img loading="lazy" class="ev-image" src="images/Teslasensors.png" alt="Tesla sensor diagnostics">
+        <article class="content-panel">
+          <h1>EV Diagnostics &amp; Calibrations</h1>
+          <p>As electric vehicles become increasingly common, accurate diagnostics are more important than ever. EVs rely on sophisticated software, high-voltage systems, advanced sensors, and networked control modules that often require specialized diagnostic tools and expertise to properly identify faults and repair needs. Working with an independent mobile provider like Lightning Auto Service can help reduce downtime, eliminate transportation delays, and provide faster access to diagnostic support directly at your facility. Serving Philadelphia, South Jersey, and Delaware, Lightning brings extensive experience with leading EV manufacturers, including Tesla and Rivian, allowing repair facilities to access specialized diagnostic, programming, and calibration services without waiting for dealership availability. The result is a more efficient repair process, reduced cycle times, and confidence that today's most advanced vehicles are repaired correctly and safely.</p>
+        </article>
       </div>
     </div>
   </main>
@@ -574,8 +695,8 @@
     </div>
   </footer>
 
-  <script src="nav-resources.js?v=7"></script>
-  <script src="bottom-anchor.js"></script>
+  <script src="nav-resources.js?v=8"></script>
+  <script src="bottom-anchor.js?v=2"></script>
   <script>
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");

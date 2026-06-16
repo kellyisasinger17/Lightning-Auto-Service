@@ -191,6 +191,15 @@
       padding: clamp(54px, 7vw, 100px) 0;
     }
 
+    .resources-showcase {
+      width: min(1420px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(470px, 0.78fr) minmax(480px, 1.05fr);
+      align-items: center;
+      gap: clamp(56px, 8vw, 128px);
+    }
+
     .resources-grid {
       width: min(100%, 610px);
       margin: 0 auto;
@@ -240,6 +249,21 @@
       letter-spacing: 0.06em;
       text-align: center;
       text-transform: uppercase;
+    }
+
+    .rainbow-sensors-link {
+      display: block;
+      width: min(100%, 640px);
+      justify-self: center;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 18px 38px rgba(255, 255, 255, 0.06);
+    }
+
+    .rainbow-sensors-link img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
 
     .site-footer {
@@ -308,6 +332,11 @@
     }
 
     @media (max-width: 1120px) {
+      .resources-showcase {
+        grid-template-columns: 1fr;
+        width: min(820px, 100%);
+      }
+
       .footer-inner {
         grid-template-columns: 1fr;
         justify-items: center;
@@ -398,6 +427,10 @@
         gap: 28px;
       }
 
+      .rainbow-sensors-link {
+        width: min(100%, 620px);
+      }
+
       .footer-social,
       .footer-logos {
         flex-wrap: wrap;
@@ -476,8 +509,8 @@
         <div class="nav-dropdown resources-dropdown">
           <a class="active" href="resources.html">Resources</a>
           <div class="dropdown-menu">
-            <a href="whatadas.html">What is ADAS?</a>
-            <a href="whyadas.html">Why is ADAS Critical?</a>
+            <a href="whatisadas.html">What is ADAS?</a>
+            <a href="whatisadas.html#why-adas-critical">Why is ADAS Critical?</a>
             <a href="compliance.html">Regulatory Compliance</a>
             <a href="commonadas.html">Common ADAS Calibrations</a>
           </div>
@@ -491,24 +524,30 @@
 
   <main class="resources-page">
     <div class="resources-inner">
-      <section class="resources-grid" aria-label="Resources">
-        <a class="resource-tile" href="whyadas.html" aria-label="ADAS Calibration: Why It's Critical">
-          <img loading="lazy" src="images/Marketing1.png" alt="">
-          <h1>ADAS Calibration:<br>Why It's Critical</h1>
+      <div class="resources-showcase">
+        <section class="resources-grid" aria-label="Resources">
+          <a class="resource-tile" href="whatisadas.html" aria-label="What Is ADAS?">
+            <img loading="lazy" src="images/Marketing%205.png" alt="">
+            <h1>What Is ADAS?</h1>
+          </a>
+          <a class="resource-tile" href="compliance.html" aria-label="State and Federal Regulatory Compliance">
+            <img loading="lazy" src="images/Mobile%20calibrations.png" alt="">
+            <h1>State &amp; Federal Regulatory Compliance</h1>
+          </a>
+          <a class="resource-tile" href="whatisadas.html#ev-diagnostics-calibrations" aria-label="EV Diagnostics and Calibration">
+            <img loading="lazy" src="images/Marketing1.png" alt="">
+            <h1>EV Diagnostics<br>&amp; Calibration</h1>
+          </a>
+          <a class="resource-tile" href="commonadas.html" aria-label="Common ADAS Calibrations By OEM">
+            <img loading="lazy" src="images/ADAS%20TESLA.jpg" alt="">
+            <h1>Common ADAS Calibrations By OEM</h1>
+          </a>
+        </section>
+
+        <a class="rainbow-sensors-link" href="whatisadas.html#ev-diagnostics-calibrations" aria-label="EV diagnostics and calibration sensors">
+          <img loading="lazy" src="images/Rainbow%20sensors.png" alt="Vehicle sensor coverage visualization">
         </a>
-        <a class="resource-tile" href="compliance.html" aria-label="State and Federal Regulatory Compliance">
-          <img loading="lazy" src="images/Mobile%20calibrations.png" alt="">
-          <h1>State &amp; Federal Regulatory Compliance</h1>
-        </a>
-        <a class="resource-tile" href="whatadas.html" aria-label="What Is ADAS?">
-          <img loading="lazy" src="images/Marketing%205.png" alt="">
-          <h1>What Is ADAS?</h1>
-        </a>
-        <a class="resource-tile" href="commonadas.html" aria-label="Common ADAS Calibrations By OEM">
-          <img loading="lazy" src="images/ADAS%20TESLA.jpg" alt="">
-          <h1>Common ADAS Calibrations By OEM</h1>
-        </a>
-      </section>
+      </div>
     </div>
   </main>
 
@@ -553,8 +592,8 @@
     </div>
   </footer>
 
-  <script src="nav-resources.js?v=7"></script>
-  <script src="bottom-anchor.js"></script>
+  <script src="nav-resources.js?v=8"></script>
+  <script src="bottom-anchor.js?v=2"></script>
   <script>
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");

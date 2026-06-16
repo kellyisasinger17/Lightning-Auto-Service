@@ -200,6 +200,17 @@
       gap: clamp(62px, 8vw, 110px);
     }
 
+    .compliance-inner {
+      display: grid;
+      gap: clamp(42px, 6vw, 82px);
+    }
+
+    .claim-panel {
+      width: min(1320px, 100%);
+      margin: 0 auto;
+      text-align: center;
+    }
+
     .content-panel,
     .callout-panel {
       background: var(--panel);
@@ -517,8 +528,8 @@
         <div class="nav-dropdown resources-dropdown">
           <a class="active" href="resources.html">Resources</a>
           <div class="dropdown-menu">
-            <a href="whatadas.html">What is ADAS?</a>
-            <a href="whyadas.html">Why is ADAS Critical?</a>
+            <a href="whatisadas.html">What is ADAS?</a>
+            <a href="whatisadas.html#why-adas-critical">Why is ADAS Critical?</a>
             <a class="active" href="compliance.html">Regulatory Compliance</a>
             <a href="commonadas.html">Common ADAS Calibrations</a>
           </div>
@@ -555,6 +566,10 @@
           </article>
         </div>
       </div>
+
+      <article class="content-panel claim-panel">
+        <p>As ADAS-equipped vehicles become the industry standard, insurers are placing greater emphasis on proper documentation to support calibration and diagnostic procedures. While many collision centers encounter delays or pushback when submitting ADAS-related charges, the challenge is often not the repair itself, it is proving that the service was required according to OEM procedures. Lightning Auto Service helps bridge that gap by providing OEM position statements, manufacturer repair procedures, health scans, photo documentation, and a comprehensive Claim Summary designed to support the approval process. By giving repair facilities the documentation insurers expect, we help reduce administrative burden, accelerate claim approvals, improve cash flow, and ensure shops are compensated for the work they perform. Combined with some of the most competitive pricing and profit margins in the region, Lightning is committed to being a true partner to collision repair facilities throughout Philadelphia, South Jersey, and Delaware.</p>
+      </article>
     </div>
   </main>
 
@@ -599,8 +614,8 @@
     </div>
   </footer>
 
-  <script src="nav-resources.js?v=7"></script>
-  <script src="bottom-anchor.js"></script>
+  <script src="nav-resources.js?v=8"></script>
+  <script src="bottom-anchor.js?v=2"></script>
   <script>
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
