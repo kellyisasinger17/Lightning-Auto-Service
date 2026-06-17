@@ -14,6 +14,16 @@
         z-index: 100;
       }
 
+      .nav-links > a,
+      .nav-dropdown > a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 50px;
+        text-align: center;
+      }
+
       .nav-dropdown {
         position: relative;
         display: inline-flex;
@@ -70,6 +80,14 @@
           justify-content: start;
           gap: 8px;
           min-height: 0;
+        }
+
+        .nav-links > a,
+        .nav-dropdown > a {
+          justify-content: flex-start;
+          width: auto;
+          min-height: 0;
+          text-align: left;
         }
 
         .nav-dropdown::after {

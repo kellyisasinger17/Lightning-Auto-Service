@@ -248,6 +248,7 @@
     }
 
     .message-panel {
+      min-width: 0;
       background: var(--panel);
       border-radius: 42px;
       box-shadow: var(--shadow);
@@ -302,14 +303,13 @@
     }
 
     .info-strip {
-      grid-column: 1 / -1;
       display: grid;
-      grid-template-columns: minmax(max-content, 0.92fr) minmax(max-content, 1.12fr) minmax(max-content, 1.08fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       align-items: center;
-      gap: clamp(28px, 5vw, 86px);
+      gap: clamp(18px, 3vw, 54px);
       margin: clamp(38px, 5.5vw, 74px) auto 0;
       padding: clamp(22px, 2.4vw, 38px) clamp(28px, 4vw, 58px);
-      width: min(100%, 1340px);
+      width: min(calc(100vw - 72px), var(--max));
       background: rgba(246, 248, 252, 0.88);
       border-radius: 42px;
       box-shadow: var(--shadow);
@@ -328,7 +328,7 @@
       justify-content: center;
       gap: clamp(10px, 1.2vw, 22px);
       min-width: 0;
-      font-size: clamp(1.15rem, 2.25vw, 2.35rem);
+      font-size: clamp(1.15rem, 2vw, 2.15rem);
       font-weight: 900;
       white-space: nowrap;
     }
@@ -378,6 +378,15 @@
       font-weight: 900;
       letter-spacing: 0.06em;
       text-transform: uppercase;
+    }
+
+    .panel-title-link {
+      display: inline-block;
+      transition: color 180ms ease;
+    }
+
+    .panel-title-link:hover {
+      color: #66cdb8;
     }
 
     .work-panel p {
@@ -722,11 +731,6 @@
         width: min(100%, 560px);
       }
 
-      .message-panel {
-        width: min(100%, 800px);
-        margin: 0 auto;
-      }
-
       .info-strip {
         margin-top: 44px;
       }
@@ -1065,27 +1069,27 @@
             </div>
             <p class="support-copy">Supporting Collision Repair shops throughout the South Jersey and Philadelphia region with OEM-compliant repairs.</p>
           </article>
-
-          <div class="info-strip" aria-label="Service highlights">
-            <a class="info-item" href="tel:+18562027494">
-              <img class="info-icon" src="images/Phone.png" alt="">
-              <span>(856) 202-7494</span>
-            </a>
-            <div class="info-item">
-              <img class="info-icon" src="images/Shield.png" alt="">
-              <span>ADAS Calibrations</span>
-            </div>
-            <div class="info-item">
-              <img class="info-icon" src="images/Bolt.png" alt="">
-              <span>Same-Day Service</span>
-            </div>
-          </div>
-
-          <div class="calendly-widget-wrap">
-            <div class="calendly-inline-widget" data-url="https://calendly.com/scheduling-lightningautoservice/calibration-service?primary_color=22d8b4" style="min-width:320px;height:700px;"></div>
-          </div>
-          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
         </div>
+
+        <div class="info-strip" aria-label="Service highlights">
+          <a class="info-item" href="tel:+18562027494">
+            <img class="info-icon" src="images/Phone.png" alt="">
+            <span>(856) 202-7494</span>
+          </a>
+          <div class="info-item">
+            <img class="info-icon" src="images/Shield.png" alt="">
+            <span>ADAS Calibrations</span>
+          </div>
+          <div class="info-item">
+            <img class="info-icon" src="images/Bolt.png" alt="">
+            <span>Same-Day Service</span>
+          </div>
+        </div>
+
+        <div class="calendly-widget-wrap">
+          <div class="calendly-inline-widget" data-url="https://calendly.com/scheduling-lightningautoservice/calibration-service?primary_color=22d8b4" style="min-width:320px;height:700px;"></div>
+        </div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </div>
     </section>
 
@@ -1093,7 +1097,7 @@
       <div class="partner-inner">
         <div class="partner-grid">
           <article class="work-panel">
-            <h2 class="panel-title">Let's Work Together</h2>
+            <h2 class="panel-title"><a class="panel-title-link" href="partner.html">Let's Work Together</a></h2>
             <p>At Lightning Auto Service, we believe it is critical for vehicle safety systems to operate properly.</p>
             <p>Our team utilizes manufacturer-approved, top-of-the-line diagnostic and service equipment for most makes and models, ensuring every vehicle is serviced to the highest standards.</p>
             <p>We provide mobile ADAS calibration, diagnostics, and programming services throughout South Jersey and the Philadelphia region.</p>
@@ -1206,7 +1210,7 @@
       </div>
     </div>
   </footer>
-  <script src="nav-resources.js?v=5"></script>
+  <script src="nav-resources.js?v=10"></script>
   <script>
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
