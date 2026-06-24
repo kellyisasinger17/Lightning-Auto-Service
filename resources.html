@@ -251,6 +251,12 @@
       text-transform: uppercase;
     }
 
+    .education-tile {
+      grid-column: 1 / -1;
+      width: min(100%, 180px);
+      justify-self: center;
+    }
+
     .rainbow-sensors-link {
       display: block;
       width: min(100%, 640px);
@@ -518,6 +524,7 @@
             <a href="whatisadas.html">What is ADAS?</a>
             <a href="whatisadas.html#why-adas-critical">Why is ADAS Critical?</a>
             <a href="compliance.html">Regulatory Compliance</a>
+            <a href="education.html">Education</a>
             <a href="commonadas.html">Common ADAS Calibrations</a>
           </div>
         </div>
@@ -547,6 +554,10 @@
           <a class="resource-tile" href="commonadas.html" aria-label="Common ADAS Calibrations By OEM">
             <img loading="lazy" src="images/ADAS%20TESLA.jpg" alt="">
             <h1>Common ADAS Calibrations By OEM</h1>
+          </a>
+          <a class="resource-tile education-tile" href="education.html" aria-label="Education">
+            <img loading="lazy" src="images/United%20ADAS%20Collective.png" alt="">
+            <h1>Education</h1>
           </a>
         </section>
 
@@ -581,7 +592,7 @@
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms &amp; Conditions</a>
         <a href="accessibility.html">Accessibility</a>
-        <span>&copy; 2026 Lightning Auto Service LLC</span>
+        <span>Copyright Lightning Auto Service 2026. All Rights Reserved.</span>
       </div>
 
       <div class="footer-logos" aria-label="Certification and partner links">
@@ -598,7 +609,7 @@
     </div>
   </footer>
 
-  <script src="nav-resources.js?v=10"></script>
+  <script src="nav-resources.js?v=12"></script>
   <script src="bottom-anchor.js?v=3"></script>
   <script>
     const menuToggle = document.querySelector(".menu-toggle");

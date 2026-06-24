@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Voulgarakis | Lightning Auto Service</title>
+  <title>ADAS Education & Training Resources | Lightning Auto Service</title>
   <link rel="icon" type="image/png" href="images/Lightning%20white%20logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --teal: #66cdb8;
+      --teal: #22D8B4;
       --gold: #b98422;
       --black: #000000;
       --white: #ffffff;
-      --panel: rgba(221, 221, 221, 0.95);
+      --panel: rgba(221, 221, 221, 0.94);
       --max: 1760px;
     }
 
@@ -50,7 +50,7 @@
 
     .topbar-inner,
     .nav-inner,
-    .profile-inner,
+    .compliance-inner,
     .footer-inner {
       width: min(var(--max), calc(100% - 64px));
       margin: 0 auto;
@@ -128,7 +128,39 @@
     }
 
     .nav-links a:active {
-      color: #22D8B4;
+      color: var(--teal);
+    }
+
+    .nav-dropdown {
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      z-index: 10;
+      display: none;
+      min-width: 210px;
+      padding: 14px;
+      transform: translateX(-50%);
+      background: var(--black);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.42);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 8px 10px;
+      color: var(--gold);
+      text-align: left;
+    }
+
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu {
+      display: grid;
     }
 
     .menu-toggle {
@@ -152,69 +184,111 @@
       background: currentColor;
     }
 
-    .profile-page {
-      min-height: calc(100vh - 168px);
+    .compliance-page {
+      min-height: calc(100vh - 225px);
       display: flex;
       align-items: center;
-      padding: clamp(58px, 7vw, 106px) 0;
+      padding: clamp(48px, 6vw, 86px) 0;
     }
 
-    .profile-grid {
-      display: grid;
-      grid-template-columns: minmax(360px, 0.95fr) minmax(340px, 0.74fr);
-      align-items: center;
-      justify-content: center;
-      gap: clamp(56px, 9vw, 140px);
-      width: min(1160px, 100%);
+    .compliance-layout {
+      width: min(1320px, 100%);
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(430px, 0.98fr) minmax(380px, 0.78fr);
+      align-items: center;
+      gap: clamp(62px, 8vw, 110px);
     }
 
-    .profile-card {
-      min-height: clamp(300px, 28vw, 390px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: clamp(34px, 5vw, 70px);
-      padding: clamp(34px, 5vw, 64px);
+    .content-panel,
+    .callout-panel {
       background: var(--panel);
       border-radius: 34px;
-      text-align: center;
       box-shadow: 0 18px 40px rgba(255, 255, 255, 0.08);
     }
 
-    .profile-card h1 {
-      margin: 0;
-      font-size: clamp(1.65rem, 2.1vw, 2.45rem);
-      line-height: 1.05;
+    .content-panel {
+      padding: clamp(34px, 4vw, 52px);
+    }
+
+    .content-panel h1 {
+      margin: 0 0 clamp(34px, 4vw, 50px);
+      font-size: clamp(1.35rem, 1.85vw, 2.05rem);
+      line-height: 1.28;
       font-weight: 900;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
+      text-align: center;
       text-transform: uppercase;
     }
 
-    .profile-copy {
+    .content-panel p,
+    .content-panel li,
+    .callout-panel p {
+      font-size: clamp(0.92rem, 1vw, 1.05rem);
+      line-height: 1.36;
+      letter-spacing: 0.04em;
+    }
+
+    .content-panel p {
+      margin: 0 0 24px;
+    }
+
+    .content-panel p:last-child,
+    .callout-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .reg-list {
+      margin: 0 0 24px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .reg-list li::before {
+      content: "✓ ";
+      color: var(--teal);
+      font-weight: 900;
+    }
+
+    .media-side {
       display: grid;
-      gap: 24px;
+      gap: clamp(34px, 5vw, 52px);
+      justify-items: center;
     }
 
-    .profile-copy p {
-      margin: 0 auto;
-      max-width: 650px;
-      font-size: clamp(0.95rem, 1.1vw, 1.15rem);
-      line-height: 1.42;
-      letter-spacing: 0.045em;
-    }
-
-    .profile-image {
-      border-radius: 14px;
-      overflow: hidden;
-      background: #222;
-      box-shadow: 0 16px 34px rgba(255, 255, 255, 0.08);
-    }
-
-    .profile-image img {
-      width: 100%;
+    .resource-image {
+      width: min(100%, 520px);
       aspect-ratio: 1 / 1;
       object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .callout-panel {
+      width: min(100%, 520px);
+      padding: clamp(30px, 4vw, 44px);
+      text-align: center;
+    }
+
+    .portal-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 22px;
+      padding: 16px 24px;
+      border-radius: 18px;
+      border: 2px solid var(--gold);
+      background: var(--teal);
+      color: var(--white);
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .portal-button:hover {
+      background: #66cdb8;
+      transform: translateY(-2px);
     }
 
     .site-footer {
@@ -283,19 +357,17 @@
     }
 
     @media (max-width: 1120px) {
-      .profile-page {
+      .compliance-page {
         align-items: flex-start;
       }
 
-      .profile-grid {
+      .compliance-layout {
         grid-template-columns: 1fr;
-        gap: 44px;
-        width: min(760px, 100%);
+        width: min(820px, 100%);
       }
 
-      .profile-image {
-        width: min(100%, 480px);
-        margin: 0 auto;
+      .media-side {
+        gap: 34px;
       }
 
       .footer-inner {
@@ -317,7 +389,7 @@
 
       .topbar-inner,
       .nav-inner,
-      .profile-inner,
+      .compliance-inner,
       .footer-inner {
         width: min(100%, calc(100% - 28px));
       }
@@ -354,6 +426,22 @@
         width: 100%;
       }
 
+      .nav-dropdown {
+        display: grid;
+        justify-content: start;
+        gap: 8px;
+      }
+
+      .dropdown-menu {
+        position: static;
+        display: grid;
+        min-width: 0;
+        padding: 0 0 0 16px;
+        transform: none;
+        border: 0;
+        box-shadow: none;
+      }
+
       .nav-links.is-open {
         display: grid;
       }
@@ -362,14 +450,14 @@
         display: none;
       }
 
-      .profile-page {
-        padding: 34px 0 54px;
+      .compliance-page {
+        min-height: auto;
+        padding: 38px 0 58px;
       }
 
-      .profile-card {
-        min-height: auto;
+      .content-panel,
+      .callout-panel {
         border-radius: 28px;
-        gap: 28px;
       }
 
       .footer-social,
@@ -395,11 +483,14 @@
         gap: 10px;
       }
 
-      .profile-card {
+      .content-panel,
+      .callout-panel {
         padding: 28px 20px;
       }
 
-      .profile-copy p {
+      .content-panel p,
+      .content-panel li,
+      .callout-panel p {
         font-size: 0.94rem;
         line-height: 1.44;
       }
@@ -418,7 +509,7 @@
       <a class="contact-link" href="mailto:submissions@lightningautoservice.com" aria-label="Email Lightning Auto Service">
         <svg class="top-icon" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="12" r="12" fill="currentColor"/>
-          <path fill="#66cdb8" d="M5.2 7.2h13.6v9.6H5.2V7.2zm1.1 1.1 5.7 4.6 5.7-4.6H6.3zm-.1 7.4h11.6v-6l-5.8 4.7-5.8-4.7v6z"/>
+          <path fill="#22D8B4" d="M5.2 7.2h13.6v9.6H5.2V7.2zm1.1 1.1 5.7 4.6 5.7-4.6H6.3zm-.1 7.4h11.6v-6l-5.8 4.7-5.8-4.7v6z"/>
         </svg>
         <span>Email us</span>
       </a>
@@ -438,7 +529,7 @@
       <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
         <a href="schedule.html">Schedule Calibration</a>
         <div class="nav-dropdown about-dropdown">
-          <a class="active" href="about.html">About Us</a>
+          <a href="about.html">About Us</a>
           <div class="dropdown-menu">
             <a href="about.html">About Us</a>
             <a href="locations.html">Locations</a>
@@ -454,12 +545,12 @@
         </div>
         <a href="partner.html">Become a Partner</a>
         <div class="nav-dropdown resources-dropdown">
-          <a href="resources.html">Resources</a>
+          <a class="active" href="resources.html">Resources</a>
           <div class="dropdown-menu">
             <a href="whatisadas.html">What is ADAS?</a>
             <a href="whatisadas.html#why-adas-critical">Why is ADAS Critical?</a>
             <a href="compliance.html">Regulatory Compliance</a>
-            <a href="education.html">Education</a>
+            <a class="active" href="education.html">Education</a>
             <a href="commonadas.html">Common ADAS Calibrations</a>
           </div>
         </div>
@@ -470,19 +561,30 @@
     </div>
   </header>
 
-  <main class="profile-page">
-    <div class="profile-inner">
-      <div class="profile-grid">
-        <article class="profile-card">
-          <h1>John Voulgarakis</h1>
-          <div class="profile-copy">
-            <p>Co-founder and CEO, John Voulgarakis built his career in the collision field overseeing multiple mergers with large corporations. Later in his career, he supervised 160+ Collision centers for North America's Largest OEM.</p>
-            <p>John likes to spend his free time serving his community in the Chew's Landing Fire Department. He also loves to spend time with his family, especially his son.</p>
-          </div>
+  <main class="compliance-page">
+    <div class="compliance-inner">
+      <div class="compliance-layout">
+        <article class="content-panel">
+          <h1>ADAS Education &amp;<br>Training Resources</h1>
+          <p>The ADAS industry is evolving rapidly, and staying informed has never been more important.</p>
+          <p>Through our partnership with Revv and the United ADAS Collective (UAC), we're excited to share access to the newly launched <strong>UAC On-Demand Learning Portal</strong>—a comprehensive educational resource designed to help collision repair professionals, estimators, technicians, managers, and shop owners build confidence in ADAS operations and workflows.</p>
+          <p><strong>The platform includes:</strong></p>
+          <ul class="reg-list">
+            <li>ADAS Maturity Curve Self-Assessments</li>
+            <li>80+ online lessons and training modules</li>
+            <li>Short-form educational videos</li>
+            <li>Knowledge checks and quizzes</li>
+            <li>Downloadable resources and reference materials</li>
+          </ul>
+          <p>Whether you're new to ADAS or looking to strengthen your team's expertise, the UAC Learning Portal provides practical, structured education that can be accessed whenever it's convenient.</p>
         </article>
 
-        <div class="profile-image">
-          <img src="images/John%20Melissa%20Aquarium.png" alt="John Voulgarakis">
+        <div class="media-side">
+          <img class="resource-image" src="images/United%20ADAS%20Collective.png" alt="United ADAS Collective training">
+          <article class="callout-panel">
+            <p><strong>Access the UAC Learning Portal</strong></p>
+            <a class="portal-button" href="https://www.unitedadascollective.org/">Access the UAC Learning Portal →</a>
+          </article>
         </div>
       </div>
     </div>
