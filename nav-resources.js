@@ -183,10 +183,11 @@
     href: "resources.html",
     label: "Resources",
     className: "resources-dropdown",
-    pages: new Set(["resources.html", "whatisadas.html", "whatisadas.html#why-adas-critical", "compliance.html", "education.html", "commonadas.html"]),
+    pages: new Set(["resources.html", "whatisadas.html", "whatisadas.html#why-adas-critical", "whatisadas.html#ev-diagnostics-calibrations", "compliance.html", "education.html", "commonadas.html"]),
     links: [
       { href: "whatisadas.html", label: "What is ADAS?" },
       { href: "whatisadas.html#why-adas-critical", label: "Why is ADAS Critical?" },
+      { href: "whatisadas.html#ev-diagnostics-calibrations", label: "Electric Vehicles" },
       { href: "compliance.html", label: "Regulatory Compliance" },
       { href: "education.html", label: "Education" },
       { href: "commonadas.html", label: "Common ADAS Calibrations" },
