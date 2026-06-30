@@ -154,34 +154,26 @@
 
     .about-page {
       min-height: calc(100vh - 168px);
-      display: flex;
-      align-items: center;
       padding: clamp(48px, 6vw, 92px) 0;
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(360px, 0.95fr) minmax(420px, 1fr);
-      align-items: center;
-      gap: clamp(52px, 8vw, 140px);
+    .about-stack {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(40px, 5vw, 64px);
       width: min(1360px, 100%);
       margin: 0 auto;
     }
 
-    .about-card,
-    .values-card {
+    .about-card {
       background: var(--panel);
       border-radius: 34px;
       box-shadow: 0 18px 40px rgba(255, 255, 255, 0.08);
-    }
-
-    .about-card {
       padding: clamp(32px, 4vw, 52px);
       text-align: center;
     }
 
-    .about-card h1,
-    .values-card h2 {
+    .about-card h1 {
       margin: 0 0 24px;
       font-size: clamp(1.65rem, 2.1vw, 2.45rem);
       line-height: 1.05;
@@ -191,8 +183,7 @@
     }
 
     .about-card p {
-      margin: 0 auto 24px;
-      max-width: 660px;
+      margin: 0 0 24px;
       font-size: clamp(0.95rem, 1.1vw, 1.15rem);
       line-height: 1.38;
       letter-spacing: 0.035em;
@@ -202,11 +193,27 @@
       margin-bottom: 0;
     }
 
-    .people-grid {
+    .about-values {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px 28px;
+      margin: 28px 0 0;
+      padding: 24px 0 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
+      list-style: none;
+      font-family: "Oswald", Arial, Helvetica, sans-serif;
+      font-size: clamp(0.85rem, 1.05vw, 1.05rem);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .people-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(32px, 4vw, 56px);
-      align-items: stretch;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(24px, 3vw, 48px);
     }
 
     .person-card {
@@ -259,24 +266,6 @@
     .person-card:hover span,
     .person-card:focus-visible span {
       color: var(--white);
-    }
-
-    .values-card {
-      align-self: center;
-      min-height: clamp(210px, 16vw, 270px);
-      padding: clamp(28px, 3vw, 40px);
-    }
-
-    .values-card h2 {
-      margin-bottom: 22px;
-    }
-
-    .values-card ul {
-      margin: 0;
-      padding-left: 24px;
-      font-size: clamp(1rem, 1.25vw, 1.25rem);
-      line-height: 1.55;
-      letter-spacing: 0.04em;
     }
 
     .site-footer {
@@ -349,9 +338,7 @@
         align-items: flex-start;
       }
 
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 44px;
+      .about-stack {
         width: min(860px, 100%);
       }
 
@@ -423,18 +410,25 @@
         padding: 34px 0 54px;
       }
 
-      .about-card,
-      .values-card {
+      .about-stack {
+        gap: 28px;
+      }
+
+      .about-card {
         border-radius: 28px;
       }
 
-      .people-grid {
+      .people-row {
         grid-template-columns: 1fr;
       }
 
-      .person-card,
-      .values-card {
+      .person-card {
         min-height: 230px;
+      }
+
+      .about-values {
+        justify-content: center;
+        gap: 12px 22px;
       }
 
       .footer-social,
@@ -460,14 +454,18 @@
         gap: 10px;
       }
 
-      .about-card,
-      .values-card {
+      .about-card {
         padding: 26px 20px;
       }
 
       .about-card p {
         font-size: 0.94rem;
         line-height: 1.44;
+      }
+
+      .about-values {
+        font-size: 0.82rem;
+        gap: 10px 18px;
       }
     }
   </style>
@@ -538,14 +536,22 @@
 
   <main class="about-page">
     <div class="about-inner">
-      <div class="about-grid">
+      <div class="about-stack">
         <article class="about-card">
           <h1>About Us</h1>
           <p>Lightning Auto Service was founded on a simple belief: when a vehicle leaves the repair process, it should be returned to the road <strong><em>as safely as its manufacturer intended</em></strong>. In an industry often pressured by speed, cost, and convenience, Lightning exists to champion precision, accountability, and adherence to OEM repair procedures. Every calibration, diagnostic, and repair decision is guided by a commitment to protecting drivers, passengers, and everyone who shares the road.</p>
           <p>Built on more than <strong>four decades of combined experience</strong> across collision repair, mechanical service, OEM operations, fleet management, and multi-shop leadership, Lightning Auto Service represents the fusion of technical expertise and operational excellence. Its founders witnessed firsthand the consequences of shortcuts and inconsistent repair standards, and set out to create a different kind of company-one focused on doing the job correctly, documenting it thoroughly, and standing behind the results. Through advanced diagnostics, ADAS calibrations, manufacturer-compliant repair support, and a relentless dedication to quality, Lightning Auto Service serves as a trusted partner to repair facilities throughout the region, helping ensure that <strong><em>safety is never treated as optional</em></strong>.</p>
+          <ul class="about-values">
+            <li>Customer Service</li>
+            <li>Integrity</li>
+            <li>Growth &amp; Development</li>
+            <li>Passion</li>
+            <li>Precision</li>
+            <li>Ownership</li>
+          </ul>
         </article>
 
-        <div class="people-grid">
+        <div class="people-row">
           <a class="person-card john" href="john.html" aria-label="Read more about John Voulgarakis">
             <img src="images/john%20v.jpg" alt="John">
             <span>John</span>
@@ -554,17 +560,6 @@
             <img src="images/chris.jpg" alt="Chris">
             <span>Chris</span>
           </a>
-          <article class="values-card">
-            <h2>Core Values</h2>
-            <ul>
-              <li>Customer Service</li>
-              <li>Integrity</li>
-              <li>Growth &amp; Development</li>
-              <li>Passion</li>
-              <li>Precision</li>
-              <li>Ownership</li>
-            </ul>
-          </article>
           <a class="person-card aaron" href="aaron.html" aria-label="Read more about Aaron Ball">
             <img src="images/aaron.jpg" alt="Aaron">
             <span>Aaron</span>
