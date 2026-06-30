@@ -1,0 +1,4 @@
+node_modules/
+
+# sitemap.xml is auto-generated on every Netlify build by @netlify/plugin-sitemap
+sitemap.xml

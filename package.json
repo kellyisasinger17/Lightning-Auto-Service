@@ -1,0 +1,12 @@
+{
+  "name": "lightning-auto-service",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lightning Auto Service marketing site",
+  "scripts": {
+    "build": "echo \"Static site — no build step required\""
+  },
+  "devDependencies": {
+    "@netlify/plugin-sitemap": "^0.8.1"
+  }
+}
