@@ -13,435 +13,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Schedule mobile ADAS calibrations, diagnostics, programming, and OEM documentation services quickly through Lightning Auto Service's online request form.">
-    <title>Schedule Service | Lightning Auto Service</title>
+      <link rel="canonical" href="https://lightningautoservice.com/schedule.html">
+<title>Schedule Service | Lightning Auto Service</title>
     <link rel="icon" type="image/png" href="images/Lightning%20white%20logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <style>
-      :root {
-        --teal: #22D8B4;
-        --gold: #b98422;
-        --black: #000000;
-        --white: #ffffff;
-        --panel: rgba(221, 221, 221, 0.94);
-        --max: 1760px;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      [hidden] {
-        display: none !important;
-      }
-
-      body {
-        min-width: 320px;
-        min-height: 100vh;
-        margin: 0;
-        color: var(--black);
-        font-family: Arial, Helvetica, sans-serif;
-        background: var(--black);
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      img {
-        display: block;
-        max-width: 100%;
-      }
-
-      .topbar {
-        height: 40px;
-        background: var(--teal);
-        color: var(--white);
-        display: flex;
-        align-items: center;
-      }
-
-      .topbar-inner,
-      .nav-inner {
-        width: min(var(--max), calc(100% - 64px));
-        margin: 0 auto;
-      }
-
-      .topbar-inner {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 34px;
-        font-size: 14px;
-        font-weight: 500;
-      }
-
-      .contact-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        white-space: nowrap;
-      }
-
-      .top-icon {
-        width: 18px;
-        height: 18px;
-        color: var(--white);
-        flex: 0 0 auto;
-      }
-
-      .site-nav {
-        background: var(--black);
-        color: var(--gold);
-      }
-
-      .nav-inner {
-        min-height: 88px;
-        display: grid;
-        grid-template-columns: 140px 1fr 120px;
-        align-items: center;
-        gap: 28px;
-      }
-
-      .nav-logo img {
-        width: 92px;
-        height: auto;
-      }
-
-      .revv {
-        justify-self: end;
-      }
-
-      .revv img {
-        width: 96px;
-        height: auto;
-      }
-
-      .nav-links {
-        display: grid;
-        grid-template-columns: repeat(5, minmax(max-content, 1fr));
-        align-items: center;
-        justify-items: center;
-        gap: 18px;
-        font-family: "Oswald", Arial, Helvetica, sans-serif;
-        font-size: clamp(0.9rem, 1.05vw, 1.25rem);
-        font-weight: 400;
-        text-transform: uppercase;
-      }
-
-      .nav-links a {
-        transition: color 160ms ease;
-      }
-
-      .nav-links a:hover,
-      .nav-links a.active {
-        color: var(--white);
-      }
-
-      .nav-links a:active {
-        color: var(--teal);
-      }
-
-      .nav-dropdown {
-        position: relative;
-        display: inline-flex;
-        justify-content: center;
-      }
-
-      .dropdown-menu {
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        z-index: 10;
-        display: none;
-        min-width: 210px;
-        padding: 14px;
-        transform: translateX(-50%);
-        background: var(--black);
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        box-shadow: 0 16px 34px rgba(0, 0, 0, 0.42);
-      }
-
-      .dropdown-menu a {
-        display: block;
-        padding: 8px 10px;
-        color: var(--gold);
-        text-align: left;
-      }
-
-      .nav-dropdown:hover .dropdown-menu,
-      .nav-dropdown:focus-within .dropdown-menu {
-        display: grid;
-      }
-
-      .menu-toggle {
-        display: none;
-        justify-self: end;
-        width: 44px;
-        height: 44px;
-        padding: 9px;
-        border: 0;
-        background: transparent;
-        color: var(--white);
-        cursor: pointer;
-      }
-
-      .menu-toggle span {
-        display: block;
-        width: 100%;
-        height: 3px;
-        margin: 5px 0;
-        border-radius: 999px;
-        background: currentColor;
-      }
-
-      .schedule-page {
-        min-height: calc(100vh - 128px);
-        display: grid;
-        place-items: center;
-        padding: clamp(28px, 5vw, 64px) 18px;
-      }
-
-      .schedule-wrap {
-        width: min(100%, 680px);
-        display: grid;
-        justify-items: center;
-      }
-
-      .form-shell {
-        width: 100%;
-        padding: clamp(28px, 4vw, 46px);
-        display: grid;
-        gap: 22px;
-        background: var(--panel);
-        border-radius: 34px;
-        box-shadow: 0 18px 40px rgba(255, 255, 255, 0.08);
-      }
-
-      .form-shell h1 {
-        margin: 0;
-        font-size: clamp(1.75rem, 3vw, 2.6rem);
-        line-height: 1.08;
-        font-weight: 900;
-        letter-spacing: 0.08em;
-        text-align: center;
-        text-transform: uppercase;
-      }
-
-      .subtitle {
-        max-width: 560px;
-        margin: -6px auto 6px;
-        font-size: clamp(0.96rem, 1.5vw, 1.08rem);
-        line-height: 1.45;
-        letter-spacing: 0.03em;
-        text-align: center;
-      }
-
-      .service-form {
-        display: grid;
-        gap: 14px;
-        width: 100%;
-      }
-
-      .form-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 14px 18px;
-      }
-
-      .form-row {
-        display: grid;
-        gap: 8px;
-      }
-
-      .form-row.full {
-        grid-column: 1 / -1;
-      }
-
-      .service-form label,
-      .upload-subtitle {
-        font-size: clamp(0.9rem, 1.05vw, 1rem);
-        font-weight: 900;
-        line-height: 1.15;
-      }
-
-      .upload-subtitle {
-        margin: 0;
-      }
-
-      .service-form input,
-      .service-form select {
-        width: 100%;
-        min-height: 40px;
-        border: 0;
-        border-radius: 999px;
-        background: var(--white);
-        color: var(--black);
-        font: inherit;
-        font-size: 0.95rem;
-        box-shadow: 0 14px 24px rgba(0, 0, 0, 0.16);
-      }
-
-      .service-form input,
-      .service-form select {
-        padding: 8px 16px;
-      }
-
-      .service-form select {
-        appearance: none;
-        background-image: linear-gradient(45deg, transparent 50%, var(--black) 50%), linear-gradient(135deg, var(--black) 50%, transparent 50%);
-        background-position: calc(100% - 22px) 18px, calc(100% - 16px) 18px;
-        background-size: 6px 6px, 6px 6px;
-        background-repeat: no-repeat;
-        padding-right: 42px;
-      }
-
-      .service-form input[type="file"] {
-        min-height: 46px;
-        padding: 10px 16px;
-        cursor: pointer;
-      }
-
-      .service-form input:focus,
-      .service-form select:focus {
-        outline: 3px solid rgba(34, 216, 180, 0.55);
-        outline-offset: 2px;
-      }
-
-      .submit-button {
-        justify-self: center;
-        min-width: 220px;
-        min-height: 52px;
-        margin-top: 10px;
-        padding: 12px 28px;
-        border: 2px solid var(--gold);
-        border-radius: 999px;
-        background: var(--teal);
-        color: var(--white);
-        font-size: 0.82rem;
-        font-weight: 900;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
-        cursor: pointer;
-      }
-
-      .submit-button:hover {
-        filter: brightness(1.03);
-      }
-
-      @media (max-width: 820px) {
-        .topbar {
-          height: auto;
-        }
-
-        .topbar-inner,
-        .nav-inner {
-          width: min(100%, calc(100% - 28px));
-        }
-
-        .topbar-inner {
-          justify-content: center;
-          padding: 10px 0;
-          gap: 18px;
-          font-size: 14px;
-        }
-
-        .nav-inner {
-          min-height: auto;
-          grid-template-columns: 94px 1fr;
-          padding: 14px 0;
-        }
-
-        .nav-logo img {
-          width: 76px;
-        }
-
-        .menu-toggle {
-          display: block;
-        }
-
-        .nav-links {
-          display: none;
-          grid-column: 1 / -1;
-          grid-template-columns: 1fr;
-          justify-items: start;
-          gap: 16px;
-          padding: 18px 0 8px;
-          font-size: 1.15rem;
-          width: 100%;
-        }
-
-        .nav-dropdown {
-          display: grid;
-          justify-content: start;
-          gap: 8px;
-        }
-
-        .dropdown-menu {
-          position: static;
-          display: grid;
-          min-width: 0;
-          padding: 0 0 0 16px;
-          transform: none;
-          border: 0;
-          box-shadow: none;
-        }
-
-        .nav-links.is-open {
-          display: grid;
-        }
-
-        .revv {
-          display: none;
-        }
-      }
-
-      @media (max-width: 640px) {
-        .schedule-page {
-          place-items: start center;
-        }
-
-        .form-shell {
-          border-radius: 28px;
-          padding: 28px 20px;
-        }
-
-        .form-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .form-row.full {
-          grid-column: auto;
-        }
-
-        .service-form input,
-        .service-form select {
-          min-height: 42px;
-        }
-
-        .submit-button {
-          width: 100%;
-        }
-      }
-
-      @media (max-width: 520px) {
-        .topbar-inner {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 8px;
-          padding-left: 10px;
-        }
-
-        .contact-link {
-          gap: 10px;
-        }
-      }
-    </style>
-  </head>
-  <body>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+  <body class="page-schedule">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="topbar" id="contact">
       <div class="topbar-inner">
         <a class="contact-link" href="tel:+18562027494" aria-label="Call Lightning Auto Service at 856 202 7494">
@@ -482,18 +63,25 @@
         <div class="nav-dropdown services-dropdown">
           <a href="services.html">Services</a>
           <div class="dropdown-menu">
-            <a href="adas.html">ADAS Calibrations</a>
-            <a href="diagnostics.html">Diagnostics</a>
-            <a href="wiring.html">Wiring Harness Repair</a>
+            <a href="services.html#oems-heading">OEMs We Service</a>
+            <a href="services.html#adas-service-heading">ADAS Calibrations</a>
+            <a href="services.html#diagnostics-service-heading">Diagnostics</a>
+            <a href="services.html#wiring-service-heading">Wiring Harness Repair</a>
           </div>
         </div>
-        <a href="partner.html">Become a Partner</a>
+        <div class="nav-dropdown partnerships-dropdown">
+          <a href="partner.html">Partnerships</a>
+          <div class="dropdown-menu">
+            <a href="partner.html">Become a Partner</a>
+            <a href="careers.html">Careers</a>
+          </div>
+        </div>
         <div class="nav-dropdown resources-dropdown">
           <a href="resources.html">Resources</a>
           <div class="dropdown-menu">
             <a href="whatisadas.html">What is ADAS?</a>
             <a href="whatisadas.html#why-adas-critical">Why is ADAS Critical?</a>
-            <a href="compliance.html">Regulatory Compliance</a>
+            <a href="whatisadas.html#adas-regulatory-compliance">Regulatory Compliance</a>
             <a href="education.html">Education</a>
             <a href="commonadas.html">Common ADAS Calibrations</a>
           </div>
@@ -505,13 +93,15 @@
       </div>
     </header>
 
-    <main class="schedule-page">
+    <main id="main-content" tabindex="-1" class="schedule-page">
+      <h1 class="page-title">Online Service Scheduling Form</h1>
       <div class="schedule-wrap">
         <section class="form-shell" aria-labelledby="schedule-heading">
-          <h1 id="schedule-heading">Schedule Service</h1>
+          <h2 id="schedule-heading">Schedule Service</h2>
           <p class="subtitle">Send your vehicle details and preferred service timing. The Lightning Auto Service team will review your request and follow up with next steps.</p>
 
           <form class="service-form" action="https://formspree.io/f/xojzrdyy" method="POST" enctype="multipart/form-data">
+            <p class="form-instructions"><span aria-hidden="true">*</span> Required fields</p>
             <input type="hidden" name="_subject" value="New Lightning Auto Service Schedule Request">
             <input type="text" name="_gotcha" autocomplete="off" tabindex="-1" hidden>
 

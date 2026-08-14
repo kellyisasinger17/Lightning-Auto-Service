@@ -171,11 +171,23 @@
     href: "services.html",
     label: "Services",
     className: "services-dropdown",
-    pages: new Set(["services.html", "adas.html", "diagnostics.html", "wiring.html"]),
+    pages: new Set(["services.html"]),
     links: [
-      { href: "adas.html", label: "ADAS Calibrations" },
-      { href: "diagnostics.html", label: "Diagnostics" },
-      { href: "wiring.html", label: "Wiring Harness Repair" },
+      { href: "services.html#oems-heading", label: "OEMs We Service" },
+      { href: "services.html#adas-service-heading", label: "ADAS Calibrations" },
+      { href: "services.html#diagnostics-service-heading", label: "Diagnostics" },
+      { href: "services.html#wiring-service-heading", label: "Wiring Harness Repair" },
+    ],
+  });
+
+  buildDropdown({
+    href: "partner.html",
+    label: "Partnerships",
+    className: "partnerships-dropdown",
+    pages: new Set(["partner.html", "careers.html"]),
+    links: [
+      { href: "partner.html", label: "Become a Partner" },
+      { href: "careers.html", label: "Careers" },
     ],
   });
 
@@ -183,12 +195,12 @@
     href: "resources.html",
     label: "Resources",
     className: "resources-dropdown",
-    pages: new Set(["resources.html", "whatisadas.html", "whatisadas.html#why-adas-critical", "whatisadas.html#ev-diagnostics-calibrations", "compliance.html", "education.html", "commonadas.html"]),
+    pages: new Set(["resources.html", "whatisadas.html", "whatisadas.html#why-adas-critical", "whatisadas.html#ev-diagnostics-calibrations", "whatisadas.html#adas-regulatory-compliance", "education.html", "commonadas.html"]),
     links: [
       { href: "whatisadas.html", label: "What is ADAS?" },
       { href: "whatisadas.html#why-adas-critical", label: "Why is ADAS Critical?" },
       { href: "whatisadas.html#ev-diagnostics-calibrations", label: "Electric Vehicles" },
-      { href: "compliance.html", label: "Regulatory Compliance" },
+      { href: "whatisadas.html#adas-regulatory-compliance", label: "Regulatory Compliance" },
       { href: "education.html", label: "Education" },
       { href: "commonadas.html", label: "Common ADAS Calibrations" },
     ],

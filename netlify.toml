@@ -2,19 +2,6 @@
   publish = "."
   command = "npm run build"
 
-[[plugins]]
-  package = "@netlify/plugin-sitemap"
-
-  [plugins.inputs]
-    buildDir = "."
-    baseUrl = "https://lightningautoservice.com"
-    prettyURLs = false
-    changeFreq = "monthly"
-    priority = 0.7
-    exclude = [
-      "./service.html"
-    ]
-
 [[headers]]
   for = "/robots.txt"
   [headers.values]

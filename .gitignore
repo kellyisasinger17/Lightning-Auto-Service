@@ -1,4 +1,4 @@
 node_modules/
 
-# sitemap.xml is auto-generated on every Netlify build by @netlify/plugin-sitemap
+# sitemap.xml is generated from canonical pages and the live BlogHandy feed by npm run build
 sitemap.xml
