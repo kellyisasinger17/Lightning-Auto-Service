@@ -108,7 +108,7 @@
     document.head.appendChild(style);
   }
 
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  const currentPage = window.location.pathname.split("/").pop() || "";
 
   function buildDropdown({ href, label, className, pages, links }) {
     const navLink = Array.from(document.querySelectorAll(".nav-links a")).find((link) => {
@@ -139,7 +139,7 @@
       const link = document.createElement("a");
       link.href = item.href;
       link.textContent = item.label;
-      if (item.href === currentPage) {
+      if (item.href.split("#")[0] === window.location.pathname) {
         link.classList.add("active");
       }
       menu.appendChild(link);
@@ -157,52 +157,52 @@
   }
 
   buildDropdown({
-    href: "about.html",
+    href: "/about",
     label: "About Us",
     className: "about-dropdown",
-    pages: new Set(["about.html", "john.html", "chris.html", "aaron.html", "locations.html"]),
+    pages: new Set(["about", "john", "chris", "aaron", "locations"]),
     links: [
-      { href: "about.html", label: "About Us" },
-      { href: "locations.html", label: "Locations" },
+      { href: "/about", label: "About Us" },
+      { href: "/locations", label: "Locations" },
     ],
   });
 
   buildDropdown({
-    href: "services.html",
+    href: "/services",
     label: "Services",
     className: "services-dropdown",
-    pages: new Set(["services.html"]),
+    pages: new Set(["services"]),
     links: [
-      { href: "services.html#oems-heading", label: "OEMs We Service" },
-      { href: "services.html#adas-service-heading", label: "ADAS Calibrations" },
-      { href: "services.html#diagnostics-service-heading", label: "Diagnostics" },
-      { href: "services.html#wiring-service-heading", label: "Wiring Harness Repair" },
+      { href: "/services#oems-heading", label: "OEMs We Service" },
+      { href: "/services#adas-service-heading", label: "ADAS Calibrations" },
+      { href: "/services#diagnostics-service-heading", label: "Diagnostics" },
+      { href: "/services#wiring-service-heading", label: "Wiring Harness Repair" },
     ],
   });
 
   buildDropdown({
-    href: "partner.html",
+    href: "/partner",
     label: "Partnerships",
     className: "partnerships-dropdown",
-    pages: new Set(["partner.html", "careers.html"]),
+    pages: new Set(["partner", "careers"]),
     links: [
-      { href: "partner.html", label: "Become a Partner" },
-      { href: "careers.html", label: "Careers" },
+      { href: "/partner", label: "Become a Partner" },
+      { href: "/careers", label: "Careers" },
     ],
   });
 
   buildDropdown({
-    href: "resources.html",
+    href: "/resources",
     label: "Resources",
     className: "resources-dropdown",
-    pages: new Set(["resources.html", "whatisadas.html", "whatisadas.html#why-adas-critical", "whatisadas.html#ev-diagnostics-calibrations", "whatisadas.html#adas-regulatory-compliance", "education.html", "commonadas.html"]),
+    pages: new Set(["resources", "whatisadas", "education", "commonadas"]),
     links: [
-      { href: "whatisadas.html", label: "What is ADAS?" },
-      { href: "whatisadas.html#why-adas-critical", label: "Why is ADAS Critical?" },
-      { href: "whatisadas.html#ev-diagnostics-calibrations", label: "Electric Vehicles" },
-      { href: "whatisadas.html#adas-regulatory-compliance", label: "Regulatory Compliance" },
-      { href: "education.html", label: "Education" },
-      { href: "commonadas.html", label: "Common ADAS Calibrations" },
+      { href: "/whatisadas", label: "What is ADAS?" },
+      { href: "/whatisadas#why-adas-critical", label: "Why is ADAS Critical?" },
+      { href: "/whatisadas#ev-diagnostics-calibrations", label: "Electric Vehicles" },
+      { href: "/whatisadas#adas-regulatory-compliance", label: "Regulatory Compliance" },
+      { href: "/education", label: "Education" },
+      { href: "/commonadas", label: "Common ADAS Calibrations" },
     ],
   });
 })();

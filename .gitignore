@@ -2,3 +2,6 @@ node_modules/
 
 # sitemap.xml is generated from canonical pages and the live BlogHandy feed by npm run build
 sitemap.xml
+
+# Local Netlify folder
+.netlify

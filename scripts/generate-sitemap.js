@@ -56,12 +56,12 @@ function blogUrls(jsonp) {
     const slug = post.match(/href="\?post=([^"]+)"/)?.[1];
     if (!slug || discovered.has(slug)) continue;
     const date = post.match(/<span class="bh-meta-date">(\d{2})-(\d{2})-(\d{4})<\/span>/);
-    const entry = { loc: `${ORIGIN}/resources.html?post=${slug}` };
+    const entry = { loc: `${ORIGIN}/resources?post=${slug}` };
     if (date) entry.lastmod = `${date[3]}-${date[2]}-${date[1]}`;
     discovered.set(slug, entry);
   }
   for (const [, slug] of content.matchAll(/href="\?post=([^"]+)"/g)) {
-    if (!discovered.has(slug)) discovered.set(slug, { loc: `${ORIGIN}/resources.html?post=${slug}` });
+    if (!discovered.has(slug)) discovered.set(slug, { loc: `${ORIGIN}/resources?post=${slug}` });
   }
   return [...discovered.values()];
 }
