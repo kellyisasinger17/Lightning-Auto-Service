@@ -2392,10 +2392,19 @@
 
     .common-updated {
       width: min(1040px, calc(100% - 64px));
-      margin: -24px auto clamp(22px, 3vw, 34px);
+      margin: -24px auto 12px;
       color: var(--white);
       font-size: clamp(1.1rem, 1.5vw, 1.35rem);
       line-height: 1.2;
+      text-align: center;
+    }
+
+    .common-intro {
+      width: min(1040px, calc(100% - 64px));
+      margin: 0 auto clamp(22px, 3vw, 34px);
+      color: var(--white);
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      line-height: 1.5;
       text-align: center;
     }
 
@@ -2579,6 +2588,8 @@
       .topbar-inner,
       .nav-inner,
       .common-inner,
+      .common-updated,
+      .common-intro,
       .footer-inner {
         width: min(100%, calc(100% - 28px));
       }
