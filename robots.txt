@@ -1,4 +1,6 @@
+# Lightning Auto Service public website
 User-agent: *
 Allow: /
 
+# Canonical sitemap for static pages and current resource posts
 Sitemap: https://lightningautoservice.com/sitemap.xml

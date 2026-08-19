@@ -1,5 +1,6 @@
 const fs = require('fs');
 const https = require('https');
+const { execFileSync } = require('child_process');
 
 const ORIGIN = 'https://lightningautoservice.com';
 const BLOG_ID = '60dcIXEB4CyR6tNjQzMg';
@@ -41,7 +42,13 @@ function staticUrls() {
       if (/name="robots"[^>]*content="[^"]*noindex/i.test(html)) return null;
       const canonical = html.match(/<link rel="canonical" href="([^"]+)"/i)?.[1];
       if (!canonical) throw new Error(`${file} has no canonical URL`);
-      return { loc: canonical };
+      let lastmod;
+      try {
+        lastmod = execFileSync('git', ['log', '-1', '--format=%cs', '--', file], { encoding: 'utf8' }).trim() || undefined;
+      } catch {
+        // A sitemap can still be generated when the build environment has no Git history.
+      }
+      return { loc: canonical, lastmod };
     })
     .filter(Boolean);
 }
