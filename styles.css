@@ -1791,6 +1791,35 @@
       --max: 1760px;
     }
 
+    .profile-interview-card {
+      grid-column: 1 / -1;
+      min-height: 0;
+      gap: 24px;
+      text-align: left;
+    }
+
+    .profile-interview-card .profile-copy {
+      gap: 18px;
+    }
+
+    .profile-interview-card .profile-copy p {
+      max-width: none;
+      margin: 0;
+    }
+
+    .profile-interview-card h2 {
+      margin: 18px 0 0;
+      font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+      line-height: 1.3;
+    }
+
+    .profile-interview-card hr {
+      width: 100%;
+      margin: 12px 0;
+      border: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.28);
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -3493,6 +3522,10 @@
       margin: 0 auto;
     }
 
+    .partner-grid > .services-panel {
+      grid-column: 1 / -1;
+    }
+
     .work-panel,
     .mobile-panel {
       min-height: clamp(330px, 26vw, 440px);
@@ -3508,6 +3541,10 @@
       flex-direction: column;
       justify-content: center;
       gap: clamp(24px, 3vw, 38px);
+    }
+
+    .work-panel .cta-button {
+      align-self: center;
     }
 
     .panel-title {
@@ -3648,6 +3685,15 @@
       font-weight: 900;
       letter-spacing: 0.06em;
       text-transform: uppercase;
+    }
+
+    .services-title a {
+      transition: color 160ms ease;
+    }
+
+    .services-title a:hover,
+    .services-title a:focus-visible {
+      color: #66cdb8;
     }
 
     .service-columns {
@@ -4128,6 +4174,28 @@
       --white: #ffffff;
       --panel: rgba(221, 221, 221, 0.95);
       --max: 1760px;
+    }
+
+    .profile-interview-card {
+      grid-column: 1 / -1;
+      min-height: 0;
+      gap: 24px;
+      text-align: left;
+    }
+
+    .profile-interview-card .profile-copy {
+      gap: 18px;
+    }
+
+    .profile-interview-card .profile-copy p {
+      max-width: none;
+      margin: 0;
+    }
+
+    .profile-interview-card h2 {
+      margin: 18px 0 0;
+      font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+      line-height: 1.3;
     }
 
     * {
