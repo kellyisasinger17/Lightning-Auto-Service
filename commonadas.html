@@ -18,7 +18,7 @@
   <link rel="icon" type="image/png" href="images/Lightning%20white%20logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.min.css">
 </head>
 <body class="page-commonadas">
@@ -79,9 +79,8 @@
         <div class="nav-dropdown resources-dropdown">
           <a class="active" href="/resources">Resources</a>
           <div class="dropdown-menu">
-            <a href="/whatisadas">What is ADAS?</a>
-            <a href="/whatisadas#why-adas-critical">Why is ADAS Critical?</a>
-            <a href="/whatisadas#adas-regulatory-compliance">Regulatory Compliance</a>
+            <a href="/resources">FAQ</a>
+            <a href="/blog">Blog</a>
             <a href="/education">Education</a>
             <a class="active" href="/commonadas">Common ADAS Calibrations</a>
           </div>
@@ -95,56 +94,47 @@
 
   <main id="main-content" tabindex="-1" class="common-page">
     <h1 class="page-title">Common ADAS Calibrations</h1>
+    <h2 class="common-updated">Updated July 2026</h2>
     <div class="common-inner">
       <div class="common-layout">
-        <div class="card-column">
-          <article class="adas-card">
-            <div class="logo-row">
-              <img src="images/audi.png" alt="Audi">
-              <img src="images/volkswagen.png" alt="Volkswagen">
-            </div>
-            <h2>Audi / Volkswagen</h2>
+        <details class="adas-card" open>
+          <summary><h2>Audi / Volkswagen</h2></summary>
+          <div class="adas-card-content">
             <p>Even if the repair is limited to an alignment or rear suspension adjustment, multiple ADAS calibrations are still required due to changes in vehicle geometry affecting these systems:</p>
             <ul>
               <li>Front radar</li>
               <li>Rear/360 camera</li>
               <li>Windshield camera</li>
             </ul>
-          </article>
+          </div>
+        </details>
 
-          <article class="adas-card">
-            <div class="logo-row single">
-              <img src="images/subaru.png" alt="Subaru">
-            </div>
-            <h2>Subaru</h2>
+        <details class="adas-card">
+          <summary><h2>Subaru</h2></summary>
+          <div class="adas-card-content">
             <p>Even if the collision appears minor or cosmetic, EyeSight camera calibration is still required because even small impacts can alter camera alignment. These include:</p>
             <ul>
               <li>Small front-end impacts</li>
               <li>Windshield replacement</li>
               <li>Minor structural or suspension changes</li>
             </ul>
-          </article>
-        </div>
+          </div>
+        </details>
 
-        <div class="card-column">
-          <article class="adas-card">
-            <div class="logo-row">
-              <img src="images/ford.png" alt="Ford">
-              <img src="images/gm.png" alt="GM">
-            </div>
-            <h2>Ford / GM</h2>
+        <details class="adas-card">
+          <summary><h2>Ford / GM</h2></summary>
+          <div class="adas-card-content">
             <p>Even if the repair seems unrelated to ADAS, calibrations are still required because system resets are tied to a wide range of mechanical and structural changes, namely:</p>
             <ul>
               <li>Alignments</li>
               <li>Minor front-end work</li>
             </ul>
-          </article>
+          </div>
+        </details>
 
-          <article class="adas-card">
-            <div class="logo-row single">
-              <img src="images/toyota.png" alt="Toyota">
-            </div>
-            <h2>Toyota</h2>
+        <details class="adas-card">
+          <summary><h2>Toyota</h2></summary>
+          <div class="adas-card-content">
             <p>Even if the collision appears minor or cosmetic, ADAS calibrations are still required because Toyota Safety Sense cameras and millimeter-wave radar can be affected by small bumper, grille, alignment, or windshield changes.</p>
             <p>Even if no warning lights are present, calibration is still required after:</p>
             <ul>
@@ -152,34 +142,30 @@
               <li>Alignments</li>
               <li>Front-end repairs</li>
             </ul>
-          </article>
-        </div>
+          </div>
+        </details>
 
-        <div class="card-column">
-          <article class="adas-card">
-            <div class="logo-row single">
-              <img src="images/honda.png" alt="Honda">
-            </div>
-            <h2>Honda</h2>
+        <details class="adas-card">
+          <summary><h2>Honda</h2></summary>
+          <div class="adas-card-content">
             <p>Even if damage is limited to bumper covers or mounting brackets, certain calibrations are still required due to sensor positioning sensitivity, and newer models also need an OEM-mandated wheel alignment. Most commonly, these include:</p>
             <ul>
               <li>Front radar</li>
               <li>Windshield camera</li>
             </ul>
-          </article>
+          </div>
+        </details>
 
-          <article class="adas-card">
-            <div class="logo-row single">
-              <img src="images/nissan.png" alt="Nissan">
-            </div>
-            <h2>Nissan</h2>
+        <details class="adas-card">
+          <summary><h2>Nissan</h2></summary>
+          <div class="adas-card-content">
             <p>Even if damage seems limited or low-speed or primarily mechanical (suspension or alignment work), specific radar alignments can be impacted by bumper, grille, or structural movement or overall vehicle geometry. Most commonly, these include:</p>
             <ul>
               <li>Front radar</li>
               <li>Windshield camera</li>
             </ul>
-          </article>
-        </div>
+          </div>
+        </details>
       </div>
     </div>
   </main>

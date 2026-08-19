@@ -45,6 +45,12 @@
   force = true
 
 [[redirects]]
+  from = "/blog.html"
+  to = "/blog"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/careers.html"
   to = "/careers"
   status = 301
@@ -124,6 +130,12 @@
 
 [[redirects]]
   from = "/whatisadas.html"
-  to = "/whatisadas"
+  to = "/resources"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/whatisadas"
+  to = "/resources"
   status = 301
   force = true
