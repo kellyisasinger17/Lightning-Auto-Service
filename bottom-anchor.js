@@ -152,7 +152,9 @@
           <a href="/about">About Us</a>
           <a href="/services">Our Services</a>
           <a href="/partner">Become a Partner</a>
+          <a href="/feedback">Customer Feedback</a>
           <a href="/resources">Resources</a>
+          <a href="/education">ADAS Education</a>
           <a href="/careers">Careers</a>
           <a href="mailto:submissions@lightningautoservice.com">Contact</a>
         </nav>
