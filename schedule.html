@@ -15,11 +15,11 @@
     <meta name="description" content="Schedule mobile ADAS calibrations, diagnostics, programming, and OEM documentation services quickly through Lightning Auto Service's online request form.">
       <link rel="canonical" href="https://lightningautoservice.com/schedule">
 <title>Schedule Service | Lightning Auto Service</title>
-    <link rel="icon" type="image/png" href="images/Lightning%20white%20logo.png">
+    <link rel="icon" type="image/png" href="assets/images/Lightning%20white%20logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
   <body class="page-schedule">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -44,7 +44,7 @@
     <header class="site-nav">
       <div class="nav-inner">
         <a class="nav-logo" href="/" aria-label="Lightning Auto Service home">
-          <img src="images/Lightning%20white%20logo.png" alt="Lightning Auto Service">
+          <img src="assets/images/Lightning%20white%20logo.png" alt="Lightning Auto Service">
         </a>
         <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
           <span></span>
@@ -87,7 +87,7 @@
         </div>
       </nav>
         <a class="revv" href="https://revvhq.com" aria-label="REVV partner">
-          <img src="images/Revv%20logo.png" alt="REVV">
+          <img src="assets/images/Revv%20logo.png" alt="REVV">
         </a>
       </div>
     </header>
@@ -152,27 +152,12 @@
         </section>
       </div>
     </main>
-    <script src="nav-resources.min.js?v=12"></script>
-    <script src="bottom-anchor.min.js?v=4"></script>
-    <script>
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector(".nav-links");
-
-      if (menuToggle && navLinks) {
-        menuToggle.addEventListener("click", () => {
-          const isOpen = navLinks.classList.toggle("is-open");
-          menuToggle.setAttribute("aria-expanded", String(isOpen));
-          menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
-        });
-
-        navLinks.addEventListener("click", (event) => {
-          if (event.target instanceof HTMLAnchorElement) {
-            navLinks.classList.remove("is-open");
-            menuToggle.setAttribute("aria-expanded", "false");
-            menuToggle.setAttribute("aria-label", "Open navigation menu");
-          }
-        });
-      }
-    </script>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="footer-copyright">Copyright Lightning Auto Service 2026. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script src="js/navigation.js"></script>
+    <script src="js/bottom-anchor.js"></script>
   </body>
 </html>

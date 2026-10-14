@@ -4,12 +4,7 @@
   "private": true,
   "description": "Lightning Auto Service marketing site",
   "scripts": {
-    "build": "npm run build:assets && npm run build:sitemap",
-    "build:assets": "lightningcss --minify --targets '>= 0.25%' --output-file styles.min.css styles.css && terser nav-resources.js -c -m -o nav-resources.min.js && terser bottom-anchor.js -c -m -o bottom-anchor.min.js",
+    "build": "npm run build:sitemap",
     "build:sitemap": "node scripts/generate-sitemap.js"
-  },
-  "devDependencies": {
-    "lightningcss-cli": "^1.33.0",
-    "terser": "^5.50.0"
   }
 }

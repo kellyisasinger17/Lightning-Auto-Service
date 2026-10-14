@@ -15,11 +15,11 @@
   <meta name="description" content="Partner with Lightning Auto Service for reliable mobile ADAS calibrations, diagnostics, programming, and OEM documentation. Contact our team today.">
     <link rel="canonical" href="https://lightningautoservice.com/partner">
 <title>ADAS Partnerships | Lightning Auto Service</title>
-  <link rel="icon" type="image/png" href="images/Lightning%20white%20logo.png">
+  <link rel="icon" type="image/png" href="assets/images/Lightning%20white%20logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="page-partner">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -44,7 +44,7 @@
   <header class="site-nav">
     <div class="nav-inner">
       <a class="nav-logo" href="/" aria-label="Lightning Auto Service home">
-        <img src="images/Lightning%20white%20logo.png" alt="Lightning Auto Service">
+        <img src="assets/images/Lightning%20white%20logo.png" alt="Lightning Auto Service">
       </a>
       <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
         <span></span>
@@ -87,7 +87,7 @@
         </div>
       </nav>
       <a class="revv" href="https://revvhq.com" aria-label="REVV partner">
-        <img src="images/Revv%20logo.png" alt="REVV">
+        <img src="assets/images/Revv%20logo.png" alt="REVV">
       </a>
     </div>
   </header>
@@ -151,11 +151,11 @@
 
           <div class="contact-strip" aria-label="Service highlights">
             <a class="contact-item" href="tel:+18562027494">
-              <img class="contact-icon" src="images/Phone.png" alt="">
+              <img class="contact-icon" src="assets/images/Phone.png" alt="">
               <span>(856) 202-7494</span>
             </a>
             <div class="contact-item">
-              <img class="contact-icon" src="images/Bolt.png" alt="">
+              <img class="contact-icon" src="assets/images/Bolt.png" alt="">
               <span>Same-Day Service</span>
             </div>
           </div>
@@ -166,66 +166,11 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-social" aria-label="Social links">
-        <a href="https://www.instagram.com/lightningautonortheast" aria-label="Lightning Auto Service on Instagram">
-          <img src="images/Instagram.png" alt="">
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61563176451572" aria-label="Lightning Auto Service on Facebook">
-          <img src="images/Facebook.png" alt="">
-        </a>
-        <a href="http://x.com/lightningadas" aria-label="Lightning Auto Service on X">
-          <img src="images/Xlogo.png" alt="">
-        </a>
-        <a href="https://www.linkedin.com/company/lightning-adas" aria-label="Lightning Auto Service on LinkedIn">
-          <img src="images/Linkedin.png" alt="">
-        </a>
-        <a href="https://www.youtube.com/@LightningAutoService" aria-label="Lightning Auto Service on YouTube">
-          <img src="images/Youtube.png" alt="">
-        </a>
-      </div>
-
-      <div class="footer-links" aria-label="Footer links">
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/terms">Terms &amp; Conditions</a>
-        <a href="/accessibility">Accessibility</a>
-        <span>Copyright Lightning Auto Service 2026. All Rights Reserved.</span>
-      </div>
-
-      <div class="footer-logos" aria-label="Certification and partner links">
-        <a href="https://nationalautobodycouncil.org/" aria-label="National Auto Body Council">
-          <img src="images/NABC%20logo.png" alt="National Auto Body Council">
-        </a>
-        <a href="https://www.i-car.com/" aria-label="I-CAR">
-          <img src="images/ICAR.png" alt="I-CAR">
-        </a>
-        <a href="https://ase.com/" aria-label="ASE">
-          <img src="images/ASE.png" alt="ASE">
-        </a>
-      </div>
+      <p class="footer-copyright">Copyright Lightning Auto Service 2026. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <script src="nav-resources.min.js?v=12"></script>
-  <script src="bottom-anchor.min.js?v=4"></script>
-  <script>
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-
-    if (menuToggle && navLinks) {
-      menuToggle.addEventListener("click", () => {
-        const isOpen = navLinks.classList.toggle("is-open");
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
-        menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
-      });
-
-      navLinks.addEventListener("click", (event) => {
-        if (event.target instanceof HTMLAnchorElement) {
-          navLinks.classList.remove("is-open");
-          menuToggle.setAttribute("aria-expanded", "false");
-          menuToggle.setAttribute("aria-label", "Open navigation menu");
-        }
-      });
-    }
-  </script>
+  <script src="js/navigation.js"></script>
+  <script src="js/bottom-anchor.js"></script>
 </body>
 </html>
