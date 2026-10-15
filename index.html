@@ -104,6 +104,16 @@
               <em>for ADAS calibrations, diagnostics &amp; post-collision services</em>
             </h2>
             <p class="support-copy">Supporting collision repair shops throughout New Jersey, greater Philadelphia, and northern Delaware with same-day, OEM-compliant repairs.</p>
+            <aside class="preferred-carriers" aria-labelledby="preferred-carriers-heading">
+              <h3 class="preferred-carriers__heading" id="preferred-carriers-heading">Approved &amp; Preferred By</h3>
+              <ul class="preferred-carriers__list">
+                <li><span class="preferred-carriers__name">State Farm</span><span class="preferred-carriers__badge">Preferred</span></li>
+                <li><span class="preferred-carriers__name">Allstate</span><span class="preferred-carriers__badge">Preferred</span></li>
+                <li><span class="preferred-carriers__name">CSAA</span><span class="preferred-carriers__badge">Preferred</span></li>
+                <li><span class="preferred-carriers__name">Liberty Mutual</span><span class="preferred-carriers__badge">Preferred</span></li>
+              </ul>
+              <p class="preferred-carriers__more">+ All Major Carriers</p>
+            </aside>
           </article>
         </div>
 
@@ -112,10 +122,31 @@
 
     <section class="testimonial-scheduling-section" aria-label="Customer testimonial and online scheduling">
       <div class="calendly-testimonial-grid">
-        <article class="message-panel testimonial-panel" aria-labelledby="testimonial-heading">
+        <article class="message-panel testimonial-panel" aria-labelledby="testimonial-heading" data-testimonial-carousel>
           <h1 class="testimonial-heading" id="testimonial-heading">Here's what our customers say!</h1>
-          <p class="testimonial-quote">“Lightning Auto Service has been incredibly easy to work with and they’re true to their word. ADAS can be complex, but Lightning makes the process easy to understand and makes the paperwork side of things much easier for us. They’ve also helped us generate nearly <strong>$7,000 in ADAS calibration revenue</strong> alone in only three months, which is a lot for a shop of our size. They’ve been a great partner and I know I can count on them to do things the right way.”</p>
-          <p class="testimonial-attribution"><strong>—Heck’s Auto, Pleasantville, NJ</strong></p>
+          <div class="testimonial-carousel" role="region" aria-roledescription="carousel" aria-label="Customer testimonials">
+            <div class="testimonial-viewport">
+              <div class="testimonial-track">
+                <blockquote class="testimonial-slide">
+                  <p class="testimonial-quote">“Lightning Auto Service has been incredibly easy to work with and they’re true to their word. ADAS can be complex, but Lightning makes the process easy to understand and makes the paperwork side of things much easier for us. They’ve also helped us generate nearly <strong>$7,000 in ADAS calibration revenue</strong> alone in only three months, which is a lot for a shop of our size. They’ve been a great partner and I know I can count on them to do things the right way.”</p>
+                  <footer class="testimonial-attribution"><strong>—Heck’s Auto, Pleasantville, NJ</strong></footer>
+                </blockquote>
+                <blockquote class="testimonial-slide">
+                  <p class="testimonial-quote">“You guys are great! We really appreciate everything Lightning Auto Service does for us. The team is reliable, easy to work with, and always delivers great service.”</p>
+                  <footer class="testimonial-attribution"><strong>—Urban Collision, Philadelphia, PA</strong></footer>
+                </blockquote>
+              </div>
+            </div>
+            <div class="testimonial-controls">
+              <button class="testimonial-arrow testimonial-prev" type="button" aria-label="Show previous testimonial">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+              </button>
+              <div class="testimonial-dots" role="group" aria-label="Choose a testimonial"></div>
+              <button class="testimonial-arrow testimonial-next" type="button" aria-label="Show next testimonial">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
         </article>
 
         <div class="calendly-widget-wrap">
@@ -188,5 +219,6 @@
   </footer>
   <script src="js/bottom-anchor.js"></script>
   <script src="js/navigation.js"></script>
+  <script src="js/testimonials.js"></script>
 </body>
 </html>
