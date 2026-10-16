@@ -121,36 +121,96 @@
 
         <section class="form-shell" aria-labelledby="careers-form-heading">
           <h2 id="careers-form-heading">Apply Today</h2>
-          <form class="careers-form" action="https://formspree.io/f/mgobdrqp" method="POST" enctype="multipart/form-data">
+          <form class="careers-form" action="https://formspree.io/f/xoejybrj" method="POST" enctype="multipart/form-data">
             <p class="form-instructions"><span aria-hidden="true">*</span> Required fields</p>
             <input type="hidden" name="_subject" value="New Lightning Auto Service Career Application">
             <input type="text" name="_gotcha" autocomplete="off" tabindex="-1" hidden>
 
-            <div class="form-row">
-              <label for="career-name">Name</label>
-              <input id="career-name" type="text" name="name" autocomplete="name" required>
-            </div>
+            <fieldset>
+              <legend>Position Details</legend>
+              <div class="form-row">
+                <label for="career-position">Position Applied For</label>
+                <input id="career-position" type="text" name="position_applied_for" required>
+              </div>
+              <div class="form-row">
+                <label for="career-application-date">Date of Application</label>
+                <input id="career-application-date" type="date" name="application_date" required>
+              </div>
+            </fieldset>
 
-            <div class="form-row">
-              <label for="career-email">Email</label>
-              <input id="career-email" type="email" name="email" autocomplete="email" required>
-            </div>
+            <fieldset>
+              <legend>1. Personal &amp; Contact Information</legend>
+              <div class="form-row"><label for="career-name">Full Legal Name</label><input id="career-name" type="text" name="full_legal_name" autocomplete="name" required></div>
+              <div class="form-row"><label for="career-preferred-name">Preferred Name <span>(Optional)</span></label><input id="career-preferred-name" type="text" name="preferred_name" autocomplete="nickname"></div>
+              <div class="form-row"><label for="career-email">Email Address</label><input id="career-email" type="email" name="email" autocomplete="email" required></div>
+              <div class="form-row"><label for="career-phone">Phone Number</label><input id="career-phone" type="tel" name="phone" autocomplete="tel" required></div>
+              <div class="form-row"><label for="career-location">City &amp; State of Residence</label><input id="career-location" type="text" name="city_state" autocomplete="address-level2" required></div>
+              <div class="form-row"><label for="career-linkedin">LinkedIn Profile <span>(Optional)</span></label><input id="career-linkedin" type="url" name="linkedin_profile" inputmode="url" placeholder="https://www.linkedin.com/in/..."></div>
+            </fieldset>
 
-            <div class="form-row">
-              <label for="career-phone">Phone</label>
-              <input id="career-phone" type="tel" name="phone" autocomplete="tel" required>
-            </div>
+            <fieldset>
+              <legend>2. Employment Eligibility &amp; Availability</legend>
+              <div class="choice-group required-question"><p>Are you legally authorized to work in the United States?</p><label><input type="radio" name="authorized_to_work_us" value="Yes" required> Yes</label><label><input type="radio" name="authorized_to_work_us" value="No"> No</label></div>
+              <div class="choice-group required-question"><p>Will you now or in the future require employment visa sponsorship?</p><label><input type="radio" name="visa_sponsorship_required" value="Yes" required> Yes</label><label><input type="radio" name="visa_sponsorship_required" value="No"> No</label></div>
+              <div class="choice-group required-question"><p>Are you at least 18 years of age?</p><label><input type="radio" name="age_18_or_older" value="Yes" required> Yes</label><label><input type="radio" name="age_18_or_older" value="No"> No</label></div>
+              <div class="choice-group required-question"><p>Are you able to work remotely and travel locally as required?</p><label><input type="radio" name="remote_and_local_travel" value="Yes" required> Yes</label><label><input type="radio" name="remote_and_local_travel" value="No"> No</label></div>
+              <div class="choice-group required-question"><p>Do you have a valid driver's license and reliable transportation?</p><label><input type="radio" name="license_and_transportation" value="Yes" required> Yes</label><label><input type="radio" name="license_and_transportation" value="No"> No</label></div>
+              <div class="form-row"><label for="career-start-date">Earliest Available Start Date</label><input id="career-start-date" type="date" name="earliest_start_date" required></div>
+            </fieldset>
 
-            <div class="form-row">
-              <label for="career-message">Message</label>
-              <textarea id="career-message" name="message" rows="5"></textarea>
-            </div>
+            <fieldset>
+              <legend>3. Education</legend>
+              <div class="form-row"><label for="career-education">Highest Level of Education Completed</label><select id="career-education" name="highest_education" required><option value="">Select one</option><option>High School Diploma / GED</option><option>Trade or Technical Certification</option><option>Associate Degree</option><option>Bachelor's Degree</option><option>Graduate Degree</option><option>Other</option></select></div>
+              <div class="form-row"><label for="career-school">School / Institution</label><input id="career-school" type="text" name="school_institution" required></div>
+              <div class="form-row"><label for="career-study">Field of Study or Certification</label><input id="career-study" type="text" name="field_of_study" required></div>
+              <div class="form-row"><label for="career-training">Relevant Automotive or Collision Repair Training <span>(Optional)</span></label><textarea id="career-training" name="relevant_training" rows="3"></textarea></div>
+            </fieldset>
 
-            <div class="form-row">
-              <label for="career-resume">Attach Resume</label>
-              <p class="upload-subtitle">Upload a PDF of your resume.</p>
-              <input id="career-resume" type="file" name="resume_pdf" accept="application/pdf,.pdf" required>
-            </div>
+            <fieldset>
+              <legend>4. Professional Experience</legend>
+              <div class="form-row"><label for="career-employer-current">Most Recent Employer</label><input id="career-employer-current" type="text" name="most_recent_employer" required></div>
+              <div class="form-row"><label for="career-job-current">Job Title</label><input id="career-job-current" type="text" name="most_recent_job_title" required></div>
+              <div class="form-row"><label for="career-dates-current">Dates of Employment</label><input id="career-dates-current" type="text" name="most_recent_employment_dates" placeholder="Month/Year – Month/Year" required></div>
+              <div class="form-row"><label for="career-responsibilities-current">Primary Responsibilities</label><textarea id="career-responsibilities-current" name="most_recent_responsibilities" rows="4" required></textarea></div>
+              <div class="form-row"><label for="career-employer-previous">Previous Employer <span>(Optional)</span></label><input id="career-employer-previous" type="text" name="previous_employer"></div>
+              <div class="form-row"><label for="career-job-previous">Previous Job Title <span>(Optional)</span></label><input id="career-job-previous" type="text" name="previous_job_title"></div>
+              <div class="form-row"><label for="career-dates-previous">Previous Dates of Employment <span>(Optional)</span></label><input id="career-dates-previous" type="text" name="previous_employment_dates" placeholder="Month/Year – Month/Year"></div>
+              <div class="form-row"><label for="career-responsibilities-previous">Previous Primary Responsibilities <span>(Optional)</span></label><textarea id="career-responsibilities-previous" name="previous_responsibilities" rows="4"></textarea></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>5. Skills &amp; Industry Experience</legend>
+              <div class="choice-group checkbox-group"><p>Prior experience (select all that apply):</p><label><input type="checkbox" name="experience[]" value="Automotive / Collision Repair"> Automotive / Collision Repair</label><label><input type="checkbox" name="experience[]" value="ADAS / Vehicle Diagnostics"> ADAS / Vehicle Diagnostics</label><label><input type="checkbox" name="experience[]" value="Field Sales / Outside Sales"> Field Sales / Outside Sales</label><label><input type="checkbox" name="experience[]" value="Business Development / Prospecting"> Business Development / Prospecting</label><label><input type="checkbox" name="experience[]" value="Customer Service"> Customer Service</label><label><input type="checkbox" name="experience[]" value="Account Management"> Account Management</label><label><input type="checkbox" name="experience[]" value="CRM / Sales Software"> CRM / Sales Software</label><label><input type="checkbox" name="experience[]" value="None of the Above"> None of the Above</label></div>
+              <div class="form-row"><label for="career-experience-other">Other Experience <span>(Optional)</span></label><input id="career-experience-other" type="text" name="other_experience"></div>
+              <div class="form-row"><label for="career-industry-familiarity">Familiarity with collision repair or ADAS technology</label><textarea id="career-industry-familiarity" name="industry_familiarity" rows="4" required></textarea></div>
+              <div class="form-row"><label for="career-tools">Software, tools, or platforms used professionally</label><textarea id="career-tools" name="professional_tools" rows="4" required></textarea></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>6. Getting to Know You</legend>
+              <div class="form-row"><label for="career-why-lightning">Why are you interested in working for Lightning Auto Service?</label><textarea id="career-why-lightning" name="why_lightning" rows="5" required></textarea></div>
+              <div class="form-row"><label for="career-position-interest">What interests you about this particular position?</label><textarea id="career-position-interest" name="position_interest" rows="5" required></textarea></div>
+              <div class="form-row"><label for="career-example">Describe a time you built a relationship, solved a problem, or took initiative.</label><textarea id="career-example" name="relationship_problem_initiative_example" rows="6" required></textarea></div>
+              <div class="form-row"><label for="career-strengths">What strengths would you bring to our team?</label><textarea id="career-strengths" name="strengths" rows="5" required></textarea></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>7. Additional Information</legend>
+              <div class="form-row"><label for="career-referral">How did you hear about this opportunity?</label><select id="career-referral" name="referral_source" required><option value="">Select one</option><option>College / Career Services</option><option>Employee Referral</option><option>LinkedIn</option><option>Indeed / Job Board</option><option>Company Website</option><option>Other</option></select></div>
+              <div class="form-row"><label for="career-professional-reference">Professional Reference</label><p class="upload-subtitle">Name, phone number, and email address</p><textarea id="career-professional-reference" name="professional_reference" rows="5" required></textarea></div>
+              <div class="form-row"><label for="career-resume">Resume</label><p class="upload-subtitle">Upload your current resume as a PDF.</p><input id="career-resume" type="file" name="resume_pdf" accept="application/pdf,.pdf" required></div>
+              <div class="form-row"><label for="career-comments">Additional Comments <span>(Optional)</span></label><textarea id="career-comments" name="additional_comments" rows="4"></textarea></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>8. Applicant Acknowledgment</legend>
+              <p class="acknowledgment-copy">By submitting this application, I certify that the information provided is accurate and complete to the best of my knowledge. I understand that material misrepresentations or omissions may affect my eligibility for employment or, if hired, result in termination, subject to applicable law. I understand that submitting this application does not guarantee employment or create an employment contract.</p>
+              <label class="acknowledgment-check"><input type="checkbox" name="applicant_acknowledgment" value="Accepted" required> I have read and agree to the applicant acknowledgment above.</label>
+              <div class="form-row"><label for="career-signature">Applicant Signature <span>(Type full legal name)</span></label><input id="career-signature" type="text" name="applicant_signature" autocomplete="name" required></div>
+              <div class="form-row"><label for="career-signature-date">Date</label><input id="career-signature-date" type="date" name="signature_date" required></div>
+            </fieldset>
+
+            <p class="equal-opportunity-note">Lightning Auto Service is an Equal Opportunity Employer. We consider qualified applicants without regard to any characteristic protected by applicable law. Reasonable accommodations are available during the application process upon request.</p>
 
             <button class="submit-button" type="submit">Submit Application</button>
           </form>
