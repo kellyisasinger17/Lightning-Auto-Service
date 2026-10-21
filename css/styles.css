@@ -9523,6 +9523,29 @@ textarea,
 }
 
 /* Site-wide typography */
+/* Keep the expanded primary navigation on a single row. */
+@media (min-width: 821px) {
+  body:not(.page-accessibility):not(.page-privacy):not(.page-terms):not(.page-video) .nav-links {
+    grid-template-columns: repeat(6, max-content);
+    justify-content: space-between;
+    gap: clamp(6px, 0.8vw, 14px);
+    font-size: clamp(0.72rem, 0.85vw, 1rem);
+  }
+}
+
+@media (min-width: 901px) {
+  .nav-links {
+    grid-template-columns: repeat(6, max-content);
+    justify-content: space-between;
+    gap: clamp(6px, 0.8vw, 14px);
+    font-size: clamp(0.72rem, 0.85vw, 1rem);
+  }
+}
+
+.nav-links a {
+  white-space: nowrap;
+}
+
 body,
 body * {
   font-family: "DM Sans", Arial, Helvetica, sans-serif !important;
