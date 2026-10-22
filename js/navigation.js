@@ -62,12 +62,13 @@
     href: "/services",
     label: "Services",
     className: "services-dropdown",
-    pages: new Set(["services"]),
+    pages: new Set(["services", "insurance"]),
     links: [
       { href: "/services#oems-heading", label: "OEMs We Service" },
       { href: "/services#adas-service-heading", label: "ADAS Calibrations" },
       { href: "/services#diagnostics-service-heading", label: "Diagnostics" },
       { href: "/services#wiring-service-heading", label: "Wiring Harness Repair" },
+      { href: "/insurance", label: "Comparison Request" },
     ],
   });
 

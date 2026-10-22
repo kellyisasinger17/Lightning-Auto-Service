@@ -26,6 +26,12 @@
   force = true
 
 [[redirects]]
+  from = "/insurance.html"
+  to = "/insurance"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/service.html"
   to = "/schedule"
   status = 301
