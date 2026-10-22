@@ -12,6 +12,11 @@
   [headers.values]
     Content-Type = "application/xml; charset=UTF-8"
 
+[[headers]]
+  for = "/adasguidebook.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
+
 # Enforce extensionless public URLs. `force` is required because the source
 # `.html` files also exist in the publish directory.
 [[redirects]]

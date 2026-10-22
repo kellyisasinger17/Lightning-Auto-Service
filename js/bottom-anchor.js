@@ -38,10 +38,12 @@
           <a href="/schedule">Schedule Calibration</a>
           <a href="/about">About Us</a>
           <a href="/services">Our Services</a>
-          <a href="https://lightningautoservice.printful.me/">Lightning Swag</a>
+          <a href="https://lightningautoservice.printful.me/">Swag Store</a>
           <a href="/partner">Become a Partner</a>
           <a href="/education">ADAS Education</a>
           <a href="/careers">Careers</a>
+        </nav>
+        <nav aria-label="Legal links" class="bottom-anchor__nav bottom-anchor__nav--legal">
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms and Conditions</a>
           <a href="/accessibility">Accessibility</a>
