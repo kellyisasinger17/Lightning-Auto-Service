@@ -96,21 +96,21 @@
           <fieldset>
             <legend>1. Insurance Representative Contact Info</legend>
             <div class="insurance-form-grid">
-              <div class="insurance-field"><label for="insurance-company">Insurance Company</label><input id="insurance-company" name="insurance_company" type="text" autocomplete="organization" required></div>
-              <div class="insurance-field"><label for="representative-name">Representative Name</label><input id="representative-name" name="representative_name" type="text" autocomplete="name" required></div>
-              <div class="insurance-field"><label for="work-email">Work Email</label><input id="work-email" name="email" type="email" autocomplete="email" required></div>
-              <div class="insurance-field"><label for="phone-number">Phone Number <span>(optional)</span></label><input id="phone-number" name="phone" type="tel" autocomplete="tel"></div>
-              <div class="insurance-field insurance-field--full"><label for="claim-number">Claim Number</label><input id="claim-number" name="claim_number" type="text" required></div>
+              <div class="insurance-field"><label for="insurance-company">Insurance Company</label><input id="insurance-company" name="insurance_company" type="text" autocomplete="organization" placeholder="Company name" required></div>
+              <div class="insurance-field"><label for="representative-name">Representative Name</label><input id="representative-name" name="representative_name" type="text" autocomplete="name" placeholder="Full name" required></div>
+              <div class="insurance-field"><label for="work-email">Work Email</label><input id="work-email" name="email" type="email" autocomplete="email" placeholder="name@company.com" required></div>
+              <div class="insurance-field"><label for="phone-number">Phone Number <span>(optional)</span></label><input id="phone-number" name="phone" type="tel" autocomplete="tel" placeholder="(555) 000-0000"></div>
+              <div class="insurance-field insurance-field--full"><label for="claim-number">Claim Number</label><input id="claim-number" name="claim_number" type="text" placeholder="Claim reference" required></div>
             </div>
           </fieldset>
 
           <fieldset>
             <legend>2. Vehicle Information</legend>
             <div class="insurance-form-grid">
-              <div class="insurance-field"><label for="model-year">Model Year</label><input id="model-year" name="model_year" type="number" min="1900" max="2100" inputmode="numeric" required></div>
-              <div class="insurance-field"><label for="vehicle-make">Make</label><input id="vehicle-make" name="vehicle_make" type="text" required></div>
-              <div class="insurance-field"><label for="vehicle-model">Model</label><input id="vehicle-model" name="vehicle_model" type="text" required></div>
-              <div class="insurance-field"><label for="vin">VIN</label><input id="vin" name="vin" type="text" minlength="17" maxlength="17" autocapitalize="characters" spellcheck="false" required></div>
+              <div class="insurance-field"><label for="model-year">Model Year</label><input id="model-year" name="model_year" type="number" min="1900" max="2100" inputmode="numeric" placeholder="2024" required></div>
+              <div class="insurance-field"><label for="vehicle-make">Make</label><input id="vehicle-make" name="vehicle_make" type="text" placeholder="Honda" required></div>
+              <div class="insurance-field"><label for="vehicle-model">Model</label><input id="vehicle-model" name="vehicle_model" type="text" placeholder="CR-V" required></div>
+              <div class="insurance-field"><label for="vin">VIN</label><input id="vin" name="vin" type="text" minlength="17" maxlength="17" autocapitalize="characters" spellcheck="false" placeholder="17-character VIN" required></div>
             </div>
           </fieldset>
 
