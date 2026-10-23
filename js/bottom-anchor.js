@@ -53,7 +53,7 @@
       <div class="bottom-anchor__social" aria-label="Lightning Auto Service social media links">
         <span>Find Us On:</span>
         <nav class="bottom-anchor__social-links" aria-label="Social media">
-          <a href="https://www.instagram.com/lightningautonortheast" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.instagram.com/lightning.adas" target="_blank" rel="noopener noreferrer">Instagram</a>
           <a href="https://www.facebook.com/profile.php?id=61563176451572" target="_blank" rel="noopener noreferrer">Facebook</a>
           <a href="https://www.linkedin.com/company/lightning-adas" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://www.youtube.com/@LightningAutoService" target="_blank" rel="noopener noreferrer">YouTube</a>
