@@ -4289,11 +4289,31 @@
       text-transform: uppercase;
     }
 
+    .page-index .services-section .service-item h3 {
+      font-size: calc(clamp(1.45rem, 2vw, 2.35rem) - 4px);
+    }
+
     .service-item p {
       margin: 0;
       max-width: 360px;
       font-size: clamp(1.12rem, 1.55vw, 1.85rem);
       line-height: 1.3;
+      letter-spacing: 0.05em;
+    }
+
+    .page-index .services-section .service-item p {
+      font-size: calc(clamp(1.12rem, 1.55vw, 1.85rem) - 4px);
+    }
+
+    .page-index .services-section .vehicle-diagnostics-copy {
+      font-size: 11px;
+    }
+
+    .diagnostic-locator-panel p {
+      max-width: 980px;
+      margin: 0 auto;
+      font-size: calc(clamp(1.12rem, 1.55vw, 1.85rem) - 6px);
+      line-height: 1.45;
       letter-spacing: 0.05em;
     }
 
@@ -4325,9 +4345,11 @@
 
     .credential-logo {
       display: grid;
+      grid-template-rows: minmax(0, 1fr) auto;
       place-items: center;
+      gap: 10px;
       min-width: 0;
-      height: clamp(110px, 11vw, 160px);
+      min-height: clamp(150px, 15vw, 210px);
       padding: clamp(8px, 1vw, 14px);
     }
 
@@ -4338,6 +4360,15 @@
       max-height: 100%;
       height: auto;
       object-fit: contain;
+    }
+
+    .credential-label {
+      margin: 0;
+      font-size: clamp(0.72rem, 0.9vw, 0.95rem);
+      line-height: 1.3;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-align: center;
     }
 
     .credential-logo--scrs img {
