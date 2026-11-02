@@ -397,6 +397,127 @@
     }
 }
 
+/* T-shirt request form */
+.page-tshirts .tshirt-form-section {
+  margin-top: 2rem;
+  padding: clamp(24px, 4vw, 40px);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.page-tshirts .tshirt-form-section h2 {
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+
+.page-tshirts .form-instructions {
+  margin: 0 0 1.25rem;
+  text-align: center;
+}
+
+.page-tshirts .about-card ol {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 24px;
+  padding-left: 1.5rem;
+  text-align: left;
+}
+
+.page-tshirts .about-card ol li {
+  padding-left: 0.25rem;
+}
+
+.page-tshirts .about-card ol li + li {
+  margin-top: 0.65rem;
+}
+
+.page-tshirts .tshirt-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.page-tshirts .tshirt-form .form-row {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.page-tshirts .tshirt-form label {
+  font-weight: 800;
+}
+
+.page-tshirts .tshirt-form label span {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.page-tshirts .tshirt-cta-row {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 0;
+}
+
+.page-tshirts .tshirt-cta-row .cta-button {
+  width: min(100%, 340px);
+}
+
+.page-tshirts .cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 300px);
+  min-height: 74px;
+  padding: 18px 32px;
+  border: 2px solid var(--gold);
+  border-radius: 16px;
+  background: var(--teal);
+  color: var(--white);
+  font: inherit;
+  font-size: calc(clamp(1rem, 1.35vw, 1.35rem) - 2px);
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 16px 32px rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+}
+
+.page-tshirts .cta-button:hover,
+.page-tshirts .cta-button:focus-visible {
+  filter: brightness(1.05);
+}
+
+.page-tshirts .tshirt-form input,
+.page-tshirts .tshirt-form select {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 2px solid #555555;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #000000;
+  font: inherit;
+}
+
+.page-tshirts .tshirt-form input:focus,
+.page-tshirts .tshirt-form select:focus {
+  border-color: #006b5c;
+  outline: 3px solid rgba(0, 107, 92, 0.25);
+  outline-offset: 2px;
+}
+
+.page-tshirts .tshirt-form .tshirt-submit {
+  justify-self: center;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .page-tshirts .tshirt-form-section {
+    padding: 24px 16px;
+  }
+}
+
 /* about.html */
 @scope (body.page-about) {
 :scope {
