@@ -4317,8 +4317,8 @@
       padding: 0 clamp(36px, 5vw, 76px);
     }
 
-    .media-grid--four {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+    .media-grid--five {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: clamp(28px, 4vw, 58px);
       margin-top: 0;
       padding: 0;
@@ -4353,6 +4353,12 @@
       background:
         linear-gradient(rgba(160, 160, 160, 0.66), rgba(160, 160, 160, 0.66)),
         url("../assets/images/Collision%20Cast.png") center / cover;
+    }
+
+    .podcast-card .media-card-title {
+      font-size: clamp(0.9rem, 1.35vw, 1.5rem);
+      line-height: 1.25;
+      letter-spacing: 0.035em;
     }
 
     .reckoning-card {
