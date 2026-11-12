@@ -518,6 +518,66 @@
   }
 }
 
+.page-inspection .tshirt-form h3 {
+  margin: 1.25rem 0 0;
+  text-align: center;
+}
+
+.page-inspection .tshirt-form .form-row {
+  justify-items: center;
+  text-align: center;
+}
+
+.page-inspection .tshirt-form input[type="text"],
+.page-inspection .tshirt-form select {
+  width: min(100%, 420px);
+}
+
+.page-inspection .tshirt-form fieldset {
+  justify-self: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 0.85rem 1rem 1rem;
+  border: 2px solid #555555;
+  border-radius: 9px;
+  text-align: center;
+}
+
+.page-inspection .tshirt-form legend {
+  padding: 0 0.35rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.page-inspection .tshirt-form fieldset label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-right: 1.5rem;
+}
+
+.page-inspection .tshirt-form input[type="radio"],
+.page-inspection .tshirt-form input[type="checkbox"] {
+  width: 1.15rem;
+  min-height: 1.15rem;
+  padding: 0;
+  accent-color: #006b5c;
+}
+
+.page-inspection .tshirt-form .form-row > label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  width: fit-content;
+  max-width: 100%;
+  text-align: left;
+}
+
+.page-inspection .tshirt-form .form-row > label:has(input[type="checkbox"])::after {
+  content: none;
+}
+
 /* about.html */
 @scope (body.page-about) {
 :scope {
