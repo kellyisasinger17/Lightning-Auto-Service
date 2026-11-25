@@ -9793,6 +9793,27 @@ textarea,
   color: #66cdb8;
 }
 
+.bottom-anchor__first-responder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 18px;
+  color: #ffffff;
+  font-size: clamp(0.75rem, 0.9vw, 0.9rem);
+  font-weight: 700;
+  letter-spacing: 0.035em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.bottom-anchor__first-responder img {
+  width: 40px;
+  height: auto;
+  border-radius: 6px;
+}
+
 .site-footer .footer-inner {
   display: flex;
   align-items: center;

@@ -60,6 +60,11 @@
           <a href="http://x.com/lightningadas" target="_blank" rel="noopener noreferrer">X</a>
         </nav>
       </div>
+
+      <div class="bottom-anchor__first-responder">
+        <img src="assets/images/First Responder Logo.png" alt="First Responder logo">
+        <span>First Responder-Owned</span>
+      </div>
     </div>
   `;
 
